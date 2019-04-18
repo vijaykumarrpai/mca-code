@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pakistan flag</title>	
+	<style type="text/css">
+  .container{
+  position: relative;
+  width: 100%;
+  max-width: 1600px;
+}
+  
+  .article-1{
+  padding: 20px;
+  background: url(pak.gif), url(flagpak.png);
+  background-size: 80%, 30%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+	</style>
+</head>
+<body>
+<canvas id="pak"></canvas>
+<script type="text/javascript">
+	var canvas = document.getElementById("pak");
+
+// Rect flag
+var ctx = canvas.getContext('2d');
+ctx.fillStyle = "#1B5E20";
+ctx.fillRect(10, 10, 250, 200);
+
+// White Circle
+ctx.beginPath();
+ctx.fillStyle = "white";
+ctx.arc(135, 80, 50, 0, Math.PI * 2, true); 
+ 
+ctx.fill();
+
+// Green Circle on top of white circle
+var ctx2 = canvas.getContext('2d');
+ctx2.beginPath();
+ctx2.fillStyle = "#1B5E20";
+ctx2.arc(150, 65, 50, 0, Math.PI * 2, true); 
+ 
+ctx2.fill();
+</script>
+<div class="container">
+<div class="col-4">
+        <article class="article-1 text-format">
+Pāk sarzamīn shād bād
+Kishwar-i ḥasīn shād bād
+Tū nishān-i ʿazm-i ʿālī shān
+Arẓ-i Pākistān!
+Markaz-i yaqīn shād bād	
+
+Pāk sarzamīn kā niz̤ām
+Quwwat-i Ukhuwwat-i ʿawām
+Qaum, mulk, salt̤anat
+Pāyindah tābindah bād!
+Shād bād manzil-i murād	Order of the holy land,
+
+Parcam-i sitārah o-hilāl
+Rahbar-i taraqqī o-kamāl
+Tarjumān-i māẓī, shān-i ḥāl
+Jān-i istiqbāl!
+Sāyah-yi Khudā-yi Ẕū l-jalāl
+        </article>
+      </div>
+  </div>
+</body>
+</html>

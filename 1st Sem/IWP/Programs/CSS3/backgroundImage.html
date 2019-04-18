@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+#example1 {
+/*two background images, the first image is a flower (aligned to the bottom and right) 
+and the second image is a paper background (aligned to the top-left corner)*/
+    background-image: url(flower.gif), url(paper.gif);
+    background-position: right bottom, left top;
+    background-repeat: no-repeat, repeat;
+    //background-size: 100px 80px;
+    //other possible values for background-size are contain and cover
+    padding: 15px;
+}
+//background shorthand property 
+/*
+#example1 {
+    background: url(flower.gif) right bottom no-repeat, url(paper.gif) left top repeat;
+} 
+*/
+</style>
+</head>
+<body>
+
+<div id="example1">
+<h1>Lorem Ipsum Dolor</h1>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+<p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+</div>
+
+</body>
+</html>

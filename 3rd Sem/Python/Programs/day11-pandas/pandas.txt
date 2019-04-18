@@ -1,0 +1,19 @@
+Series
+It is a one dimesional array like object containing a sequence of values and an associated array of data labels called its index.
+The values can be of integer, string, float, python objects etc
+pandas.Series(data, index, dtype, copy)
+
+DataFrames
+It represents a rectangular table of data and contains an ordered collection of columns each of which can be a different value.
+The DataFrame has both row and column index
+The DataFrames is stored as one or more two-dimesional blocks rather than a list, dict or some other collection
+pandas.DataFrame(data, index, columns, dtype, copy)
+
+data : numpy ndarray(structured or homogenous), dict or DataFrame
+index : index or array-like
+columns : Index or array-like
+dtype: dtype, default None
+copy: boolean, default False
+
+Series methods and attributes
+axes, dtype, empty, ndim, size, values, head(), tail()

@@ -1,0 +1,78 @@
+*{
+	font-family: "Times New Roman";
+}
+
+body{
+	margin: 0px;
+}
+
+.maps{
+	width: 80%;
+	height: auto;
+}
+
+.container{
+	position: relative;
+	width: 100%;
+	max-width: 1600px;
+}
+
+.header{
+	padding: 30px;
+	background-color: lightyellow;
+}
+
+.text-center{
+	text-align: center;
+}
+
+.justify{
+	text-align: justify;
+}
+
+.navbar{
+	padding: 30px;
+	background-color: lightpink;
+}
+
+.page{
+	padding: 10px;
+	background-color: lightblue;
+}
+
+.article-1{
+	padding: 20px;
+	background: url(pak.gif), url(flagpak.png);
+	background-size: 80%, 30%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.article-2{
+	padding: 20px;
+	background: url(india.png), url(flagind.png);
+	background-size: 80%, 30%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.article-3{
+	padding: 20px;
+	background: url(bangla.gif), url(flagbangla.jpg);
+	background-size: 80%, 30%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text-format{
+/*	color: white;
+	font-size: 20px;
+	-webkit-text-stroke: 1px black;*/
+}

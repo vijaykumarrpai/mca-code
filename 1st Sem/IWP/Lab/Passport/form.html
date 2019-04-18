@@ -1,0 +1,194 @@
+<html>
+<head>
+    <title>PASSPORT APPLICATION FORM</title>
+    <style type="text/css">
+    body
+    {
+        background-color: orange;
+    }
+    </style>
+</head>
+
+<body style="border:10px";>
+<form autocomplete="on" action = ""oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+    <p align="right"><b><big><img src="" alt="Affix your recent passport size photo" style="width:100px;height:130px;"></b></big></p>
+    <div style="float:left;"><img src="india.png" alt="logo " style="width:100px;height:100px; "></div>
+    
+    <div class="header">
+        
+        <center>
+            
+            <p align="center">
+                <h1>PASSPORT SEVA KENDRA</h1>
+            </p>
+            
+            <p align="center">
+                <h4>GOVERNMENT OF INDIA, MINISTRY OF EXTERNAL AFFAIRS</h4>
+            </p>
+            
+            <p align="center">
+                <h2>UNDERTAKEN BY CENTRAL GOVERNMENT</h2>
+            </p>
+            
+            <p align="center">
+                <h2>&copy COPYRIGHT</h2>
+            </p>
+
+            <p align="center">
+                <h2>Please read the Passport Instruction Booklet carefully before filling the form. Furnishing of incorrect information/
+                    suppression of information would lead to rejection of application and would attract penal provisions as prescribed
+                    under the Passports Act, 1967. Please produce your original documents at the time of submission of the form. All fields
+                    marked with (*) are mandatory to fill.</h2>
+            </p>
+
+        </center>
+    </div>
+    
+    <table style="width:100%;" cellpading="2" cellspacing="2" border="1">
+        
+        <tr>
+            <td style="width:25%;">Register to apply at</td>
+            <td colspan="3"><input type="radio" autofocus>&nbsp CPV Delhi &nbsp&nbsp&nbsp&nbsp
+                            <input type="radio">&nbsp Passport Office</td>
+        </tr>
+        
+  <tr>
+  <td>Passport Office</td>
+    <td><select name="Office">
+    <option value="bangalore">Bangalore</option>
+    <option value="delhi">Delhi</option>
+    <option value="mumbai">Mumbai</option>
+    <option value="pune">Pune</option>
+  </select></td></tr>
+    
+    <tr>    
+    <td>Locations</td><td><select size="3" name="locations" multiple>
+        <option value="jp nagar">JP Nagar</option>
+        <option value="mg road">MG Road</option>
+        <option value="lalbhag">Lalbhag</option>
+        <option value="banashankari">Banashankari</option>
+        </select></td></tr>
+        <tr>
+            <td style="width:25%;">Application Type</td>
+            <td colspan="3"><input type="checkbox">&nbsp New Application &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <input type="checkbox">&nbsp Tatkal &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <input type="checkbox">&nbsp Renewal</td>
+        </tr>
+        
+        <tr>
+            <td style="text-align:left;">Given Name</td>
+            <td colspan="3"><input type="text" placeholder="First name" style="width:25%;"></td>
+        </tr>
+
+        <tr>
+            <td style="text-align:left;">Surname</td>
+            <td colspan="3"><input type="text" placeholder="Sur name" style="width:25%;"></td>
+        </tr>
+        
+        <tr>
+        <td>Age</td>
+        <td><input type="range" id="a" value="50">100+<input type="number" id="b" value="50">=<output name="x" for="a b"></output></td></tr>
+        
+        <tr>
+            <td style="text-align:left;">Date Of Birth (Enter the date before 2012 and after 1979)</td>
+            <td colspan="2"><input type="date" name="bday" min="1979-12-31" max="2012-12-31"></td>
+        </tr>
+
+        <tr>
+            <td style="text-align:left;">Address For Communication</td>
+            <td colspan="4"><input type="text" style="width:70%;"> </td>
+        </tr>
+
+        <tr>
+            <td style="text-align:left;">City</td>
+            <td><input list="City" name="city">
+                    <datalist id="City">
+                    <option value="Bangalore">
+                    <option value="Pune">
+                    <option value="Mumbai">
+                    <option value="Delhi">
+                    <option value="Hyderabad"></option>
+                </datalist></td>
+        <tr><td>Country</td> 
+        <td><input type="text" name="country" value="India" readonly></td>
+        </tr>
+        <tr>
+        <td style="text-align:left;">Pincode</td>
+        <td><input type="text" maxlength="6" size="6" style="width:15%;"></td>
+        </tr>
+
+        <tr>
+            <td style="text-align:left;">Email</td>
+            <td><input type="text" style="width:65%;"></td>
+        </tr>
+
+        <tr>
+            <td style="text-align:left;">Mobile/landline</td>
+            <td><input type="tel" style="width:100%;"></td>
+        </tr>
+        
+        <tr>
+            <td style="width:25%;">Do you want your Login Id to be same as E-mail Id?</td>
+            <td colspan="3"><input type="radio">&nbsp Yes &nbsp&nbsp&nbsp&nbsp
+                            <input type="radio">&nbsp No</td>
+        </tr>
+
+        <tr>
+            <td style="text-align:left;">Login Id</td>
+            <td colspan="3"><input type="text" style="width:25%;"></td>
+        </tr>
+
+        <tr>
+            <td style="text-align:left;">Password</td>
+            <td colspan="3"><input type="Password" style="width:25%;"></td>
+        </tr>
+
+         <tr>
+            <td style="text-align:left;">Confirm Password</td>
+            <td colspan="3"><input type="Password" style="width:25%;"></td>
+        </tr>
+
+        <tr>
+            <td>Hint Question</td>
+            <td><select name="question">
+            <option value="bangalore">First School</option>
+            <option value="delhi">Nick Name</option>
+            <option value="mumbai">Mother's Maiden Name</option>
+            <option value="pune">First Motorbike</option>
+            </select>
+        </td></tr>
+        
+         <tr>
+            <td style="text-align:left;">Hint Answer</td>
+            <td colspan="3"><input type="text" style="width:25%;"></td>
+         </tr>
+
+         <tr>
+         <td>Time</td>
+         <td><input type="Time"></td>
+         </tr>
+         
+         <tr>
+         <td>Number</td>
+         <td><input type="number" name="points" step="3"></td>
+         </tr>
+
+         <tr>
+            <td><input type="submit" value="Submit" name="submit" formtarget="_blank"></td>
+            <td><input type="reset" value="Reset"></td>
+            <td><input type="button" id="btn01" value="OK"></td>
+         </tr>
+            <td><p>Closed on <time datetime="2017-02-14 20:00">Public holidays</time>.</p></td>
+         </tr>
+    </table>
+    </form>
+    <button onclick="disableElement()">Disable</button>
+    <script>
+function disableElement() 
+{
+    document.getElementById("btn01").disabled = true;
+}
+</script>
+</body>
+
+</html>

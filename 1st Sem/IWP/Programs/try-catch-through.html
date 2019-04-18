@@ -1,0 +1,24 @@
+<html>
+<body>
+<script type="text/javascript">
+var x=prompt("Enter a number between 0 and 10:","")
+//try excute the statement
+try
+{
+  if(x>10)
+  //throws the exception
+    throw "Err1"
+  else if(x<0)
+    throw "Err2"
+}
+//catch holds the error
+catch(er)
+{
+  if(er=="Err1")
+    alert("Error! The value is too high")
+  if(er == "Err2")
+    alert("Error! The value is too low")
+}
+</script>
+</body>
+</html>

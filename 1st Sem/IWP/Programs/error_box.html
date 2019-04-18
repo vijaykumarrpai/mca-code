@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml//DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+ <head>
+  <script type="text/javascript">
+      var txt="";
+      function message()
+    {
+      try
+      {
+      addalert("Welcome Guest!!")
+      }
+      catch(err)
+      {
+       txt="There was an error on this page\n"
+       txt+="Error Description:"+err.description+"\n\n"
+       txt+="click Ok to continue\n\n"
+       alert(txt)
+      }
+    }
+  </script>
+ </head>
+ <body>
+ <form>
+ <input type="Button" value="View Message" onclick="message()"/>
+ </form>
+</body>
+</html>

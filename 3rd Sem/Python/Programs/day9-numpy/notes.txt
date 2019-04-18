@@ -1,0 +1,8 @@
+NumPy which stands for Numerical Python, is a library consisting of multidimesional array objects and a collection of sub routines.
+NumPy enriches the programming language Python with powerful data structures, implementing multidimesional arrays and matrices.
+Why NumPy - it internally stores data in contiguous block of memory, independent of other built-in Python Objects.
+Numpy operations perform complex computations on entire array without use of for loop.
+At the core, numpy provides the excellent ndarray objects, short for n-dimensional arrays.
+
+arrays support vectorised operations, while lists dont
+once an array is created, you cannot change its size. You will have to create a new array or overwrite it.

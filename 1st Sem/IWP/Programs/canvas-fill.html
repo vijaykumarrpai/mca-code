@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="300" height="400" style="border:1px solid #800000;">Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+var c=document.getElementById('myCanvas');
+var ctx=c.getContext('2d');
+ctx.strokeRect(50,50,150,75);
+
+ctx.fillStyle='red';
+ctx.shadowBlur=10;
+//Default value:0 JavaScript syntax:context.shadowBlur=number;
+
+ctx.shadowColor="orange";
+ctx.fillRect(10,10,150,75);
+
+
+</script>
+
+</body>
+</html>

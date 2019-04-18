@@ -1,0 +1,54 @@
+body {
+    background-color: lightblue;
+	 }
+
+h1   {
+    color: navy;
+    margin-left: 20px;
+     }
+
+#intro	{
+		font-size: 20px;
+		font-weight: bold;
+		color: green;
+		}
+
+p.comics  {
+	       font-size: 20px;
+	       font-family: ;
+	       font-weight: bold;
+	       color: navy;
+	      }
+
+p.life    {
+	       font-size: 20px;
+	       font-family: ;
+	       font-weight: bold;
+	       color: yellow;
+	      }
+
+p.price1    {
+	       font-size: 20px;
+	       font-family: ;
+	       font-weight: bold;
+	       color: blue;
+	      }
+
+p.price2    {
+	       font-size: 20px;
+	       font-family: ;
+	       font-weight: bold;
+	       color: green;
+   	       }
+
+p.price3    {
+	       font-size: 20px;
+	       font-family: ;
+	       font-weight: bold;
+	       color: red;
+   	       }
+
+h3   {
+		font-family: "CourierNew";
+     }
+

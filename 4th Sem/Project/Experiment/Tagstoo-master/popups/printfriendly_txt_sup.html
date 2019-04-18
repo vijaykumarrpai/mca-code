@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<!--
+* Copyright 2017-2018, Pablo Andueza pabloandumundu@gmail.com
+
+* This file is part of Tagstoo.
+
+* Tagstoo is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+
+* Tagstoo is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+
+* You should have received a copy of the GNU General Public License
+* along with Tagstoo.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Searched List topmenu - (Txt)</title>
+
+	<script src="../js/jquery-latest.min.js"></script>
+	<script src="../js/jquery-ui.min.js"></script> <!-- para tooltips -->
+	<script src="../js/printfriendly_txt_sup.js"></script>
+
+	<link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+	<link href="../css/printfriendly_txt.css" rel="stylesheet" type="text/css">
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+	        language = localStorage["language"];
+	        showtooltips = localStorage["showtooltips"];
+
+			if (language == 'EN') {
+				$(".lang_en").css("display", "inline-block");
+				$(".lang_es").css("display", "none");
+				$(".lang_fr").css("display", "none");
+				} else if (language =='ES') {
+				$(".lang_en").css("display", "none");
+				$(".lang_es").css("display", "inline-block");
+				$(".lang_fr").css("display", "none");
+			} else if (language == "FR") {
+				$(".lang_en").css("display", "none");
+				$(".lang_es").css("display", "none");
+				$(".lang_fr").css("display", "inline-block");					
+			}
+
+			$(".lang_en a").tooltip({
+	      		disabled: !showtooltips,
+	      		show: {delay: 800},      		
+	      			position: {
+	          		my: "right", 
+	          		at: "right-43"
+	      		}
+	      	});
+	      	$(".lang_es a").tooltip({
+	      		disabled: !showtooltips,
+	      		show: {delay: 800},      		
+	      		position: {
+	          	my: "right", 
+	          	at: "right-43"
+	      		}
+	      	});
+	      	$(".lang_fr a").tooltip({
+	      		disabled: !showtooltips,
+	      		show: {delay: 800},      		
+	      		position: {
+	          		my: "right", 
+	          		at: "right-43"
+	      		}
+	      	});			
+
+		});		
+
+	</script>
+	<style>
+		.ui-tooltip {
+			font-size:12px !important;
+			background-image: url(../img/sneaker_mesh_fabric.png);
+			border: 3px solid rgba(0,0,0,.7) !important;
+		    border-radius: 8px !important;
+		    box-shadow: 0 3px 3px rgba(0,0,0,.3) !important;
+		}
+	</style>
+
+</head>
+
+<body style="margin: 4px; margin-left:6px;">
+
+	<div id="printfriendlymenu">
+
+		<span class="lang_en"><a onclick="aguardartxt()" title="Save as plain text."><img src="../img/if_save_32_51415.png" alt=""></a></span>
+		<span class="lang_es"><a onclick="aguardartxt()" title="Guardar como texto plano."><img src="../img/if_save_32_51415.png" alt=""></a></span>
+		<span class="lang_fr"><a onclick="aguardartxt()" title="Enregistrer sous le texte brut."><img src="../img/if_save_32_51415.png" alt=""></a></span>
+
+		<span class="lang_en"><a onclick="toprint()" title="Open print dialog."><img src="../img/if_printer_32_51418.png" alt=""></a></span>
+		<span class="lang_es"><a onclick="toprint()" title="Abrir diálogo de impresión."><img src="../img/if_printer_32_51418.png" alt=""></a></span>
+		<span class="lang_fr"><a onclick="toprint()" title="Dialogue d'impression ouverte."><img src="../img/if_printer_32_51418.png" alt=""></a></span>
+
+	</div>
+	
+</body>
+</html>

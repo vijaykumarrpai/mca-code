@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<!--
+* Copyright 2017-2018, Pablo Andueza pabloandumundu@gmail.com
+
+* This file is part of Tagstoo.
+
+* Tagstoo is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+
+* Tagstoo is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+
+* You should have received a copy of the GNU General Public License
+* along with Tagstoo.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+
+<html lang="en">
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>New tag</title>
+		
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+	        language = localStorage["language"];
+
+			if (language == 'EN') {
+				$(".lang_en").css("display", "inline-block");
+				$(".lang_es").css("display", "none");
+				$(".lang_fr").css("display", "none");
+				// display:block (para algun span)
+				$(".lang_en_b").css("display", "block");
+				$(".lang_es_b").css("display", "none");
+				$(".lang_fr_b").css("display", "none");
+				// para el colorPicker
+				$("#colorPicker").removeClass("l_es");
+				$("#colorPicker").removeClass("l_fr");
+			} else if (language =='ES') {
+				$(".lang_en").css("display", "none");
+				$(".lang_es").css("display", "inline-block");
+				$(".lang_fr").css("display", "none");
+				// display:block (para algun span)
+				$(".lang_en_b").css("display", "none");
+				$(".lang_es_b").css("display", "block");
+				$(".lang_fr_b").css("display", "none");
+				// para el colorPicker
+				$("#colorPicker").addClass("l_es");
+				$("#colorPicker").removeClass("l_fr");
+			} else if (language == "FR") {
+				$(".lang_en").css("display", "none");
+				$(".lang_es").css("display", "none");
+				$(".lang_fr").css("display", "inline-block");
+				// display:block (para algun span)
+				$(".lang_en_b").css("display", "none");
+				$(".lang_es_b").css("display", "none");
+				$(".lang_fr_b").css("display", "block");
+				// para el colorPicker
+				$("#colorPicker").removeClass("l_es");
+				$("#colorPicker").addClass("l_fr");				
+			}
+
+			// para el colorPicker
+			var $box = $('#colorPicker');
+	        $box.tinycolorpicker();
+	        box = $box.data("plugin_tinycolorpicker");
+
+		});
+	</script>
+
+</head>
+<body>
+
+	<div id="popuptitle">
+		<span class="lang_en">EDIT OR REMOVE TAG</span>
+		<span class="lang_es">EDITAR O SUPRIMIR ETIQUETA</span>
+		<span class="lang_fr">MODIFIER OU SUPPRIMER L'ÉTIQUETTE</span>
+	</div>
+
+	<br />
+	<hr>
+
+	<div>
+		<span class="lang_en">Select Tag to Edit or Remove:</span>
+		<span class="lang_es">Seleccionar etiqueta para Editar o Suprimir:</span>
+		<span class="lang_fr">Sélectionnez étiquette pour Modifier ou Supprimer:</span>
+	</div>
+	<div id="existingtags-wrap"></div>
+	
+	<br />
+
+	<em>
+		<span class="lang_en">To edit...</span>
+		<span class="lang_es">Para editar...</span>
+		<span class="lang_fr">Pour modifier...</span>
+	</em>
+
+	<br />
+
+	<div>
+		<span class="lang_en">Select Shape:</span>
+		<span class="lang_es">Seleccionar Forma:</span>
+		<span class="lang_fr">Sélectionnez Forme:</span>
+	</div>
+	<div id="tagforms-wrap"><div id="tagforms"></div></div>
+
+	<div id="selectcolor">
+
+		<span class="lang_en">Select Color:</span>
+		<span class="lang_es">Seleccionar Color:</span>
+		<span class="lang_fr">Sélectionnez Couleur:</span>	
+		
+	    <div id="colorPicker">
+	        <a class="color"><div class="colorInner"></div></a>
+	        <div class="track"></div>
+	        <ul class="dropdown"><li></li></ul>
+	        <input type="hidden" class="colorInput"/>
+	    </div>
+	</div>
+
+    <div id="selecttext">
+	    <span class="lang_en_b">Text of the tag:</span>
+	    <span class="lang_es_b">Texto de la etiqueta:</span>
+	    <span class="lang_fr_b">Texte de étiquette:</span>
+    	<input type="text" id="tagtext">
+    </div>
+
+	
+    <div id="preview">
+	    <span class="lang_en_b">Preview:</span>
+	    <span class="lang_es_b">Vista anticipada:</span>
+	    <span class="lang_fr_b">Prévisualisation:</span>
+		<div id="tagpreview"><div class="tagticket small">&nbsp;</div></div>
+	</div>
+
+	<br />
+	<hr>
+
+	<a class="medium button green savetag" onclick="savetag()">
+		<span class="lang_en">Save edited tag!</span>
+		<span class="lang_es">¡Guardar etiqueta editada!</span>
+		<span class="lang_fr">Enregistrer étiquette éditée!</span>
+	</a>
+
+	<br />
+
+	<a class="medium button red" onclick="deletetag()">
+		<span class="lang_en">Remove Tag!</span>
+		<span class="lang_es">¡Suprimir etiqueta!</span>
+		<span class="lang_fr">Supprimer étiquette!</span>
+	</a>	
+	<a class="medium button orange close" onclick="cerrar()">
+		<span class="lang_en">Close</span>
+		<span class="lang_es">Cerrar</span>
+		<span class="lang_fr">Fermer</span>
+	</a>
+
+	<script>
+		edittagpreload();
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+.box{
+    width: 1000px;
+    height: 600px;
+    background-color: black;    
+}
+
+.rocket{
+    font-size: 30px;
+    position: relative;
+    color: white;
+    width: auto;
+    animation-name: rocket;
+    animation-duration: 4s;
+    animation-iteration-count: 10;
+    transition: transform() 2s;
+    }
+
+.rocket:hover{    
+    animation-play-state: paused;
+}
+
+@keyframes rocket {
+    0% {
+        left: 0px;
+        top: 600px;
+    }
+
+    100% {
+        left: 800px;
+        top: 0px;
+    }
+}

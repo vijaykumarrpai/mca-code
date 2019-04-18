@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<!--
+* Copyright 2017-2018, Pablo Andueza pabloandumundu@gmail.com
+
+* This file is part of Tagstoo.
+
+* Tagstoo is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+
+* Tagstoo is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+
+* You should have received a copy of the GNU General Public License
+* along with Tagstoo.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<title>Help &amp; product info</title>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+	        language = localStorage["language"];
+
+			if (language == 'EN') {
+				$(".lang_en").css("display", "inline-block");
+				$(".lang_es").css("display", "none");
+				$(".lang_fr").css("display", "none");
+				// display:block (para algun span)
+				$(".lang_en_b").css("display", "block");
+				$(".lang_es_b").css("display", "none");
+				$(".lang_fr_b").css("display", "none");			
+			} else if (language =='ES') {
+				$(".lang_en").css("display", "none");
+				$(".lang_es").css("display", "inline-block");
+				$(".lang_fr").css("display", "none");
+				// display:block (para algun span)
+				$(".lang_en_b").css("display", "none");
+				$(".lang_es_b").css("display", "block");
+				$(".lang_fr_b").css("display", "none");			
+			} else if (language == "FR") {
+				$(".lang_en").css("display", "none");
+				$(".lang_es").css("display", "none");
+				$(".lang_fr").css("display", "inline-block");
+				// display:block (para algun span)
+				$(".lang_en_b").css("display", "none");
+				$(".lang_es_b").css("display", "none");
+				$(".lang_fr_b").css("display", "block");						
+			}			
+
+		});
+	</script>
+	
+</head>
+<body>
+	
+	<div id="popuptitle"><img src="img/info.png" alt="" style="margin-top: 1px">
+		<span class="lang_en">HELP &amp; PRODUCT INFO</span>
+		<span class="lang_es">AYUDA E INFORMACIÓN DEL PRODUCTO</span>
+		<span class="lang_fr">AIDE ET INFORMATION PRODUIT</span>
+	</div>
+
+	<br>
+	<hr>
+
+	<div id="infopanel">
+
+		<a id="showhelp" class="medium button blue">
+			<span class="lang_en">HELP</span>
+			<span class="lang_es">AYUDA</span>
+			<span class="lang_fr">AIDE</span>
+		</a>
+		<span class="lang_en"><em>Show Help!</em> </span>		
+		<span class="lang_es"><em>¡Mostrar Ayuda!</em> </span>		
+		<span class="lang_fr"><em>Afficher L'aide!</em> </span>		
+
+		<hr>
+		
+	    <a id="showabout" class="medium button yellow">
+	    	<span class="lang_en">About this</span>
+	    	<span class="lang_es">Acerca de</span>
+	    	<span class="lang_fr">À propos de</span>
+		</a>
+		<span class="lang_en"><em>&nbsp;Program version, author and license.</em> </span>
+		<span class="lang_es"><em>&nbsp;Versión del programa, autor y licencia.</em> </span>
+		<span class="lang_fr"><em>&nbsp;Version du programme, auteur et licence.</em> </span>
+		
+		<br>
+
+	    <a id="showlicenses" class="medium button yellow">
+	    <span class="lang_en">Libraries licenses</span>
+	    <span class="lang_es">Licencias de bibliotecas</span>
+	    <span class="lang_fr">Licences bibliothèques</span>
+		</a>
+	    <span class="lang_en"><em>&nbsp;Licenses of used libraries.</em> </span>
+	    <span class="lang_es"><em>&nbsp;Licencias de bibliotecas usadas.</em> </span>
+	    <span class="lang_fr"><em>&nbsp;Licences des bibliothèques utilisées.</em> </span>
+
+		<br>
+		
+		<hr>
+
+	</div>
+	
+	<iframe id="infoiframe" src="popups/popup-info-blank.html" frameborder="0" ></iframe>	
+
+	<a class="large button orange closeopt" onclick="cerrar()" style="margin-bottom: 3px">
+	<span class="lang_en">Close</span>
+	<span class="lang_es">Cerrar</span>
+	<span class="lang_fr">Fermer</span>
+	</a>
+
+	<script>
+		infopreload();
+	</script>
+
+</body>
+</html>

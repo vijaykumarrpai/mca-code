@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<script type="text/javascript">
+var txt="";
+function message() 
+{
+//try excute the statement
+try { 
+    
+    addalert("Welcome guest!"); 
+     //alert has been misspelled purposefully to send the control to catch block 
+    }
+ //catch holds the error
+catch(err) 
+  {  
+  txt="There was an error on this page.\n\n";
+  txt+="Click OK to continue viewing this page,\n";
+  txt+="or Cancel to return to the home page.\n\n";
+   if(!confirm(txt)) 
+			{
+			document.location.href="http://www.pes.edu/";
+			}
+   }
+}
+</script>  
+</head>
+<body>
+<input type="button" value="view message" onclick="message()">
+ </body> 
+ </html>

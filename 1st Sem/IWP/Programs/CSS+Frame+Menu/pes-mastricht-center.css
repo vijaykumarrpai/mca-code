@@ -1,0 +1,48 @@
+body {
+
+	background-color:#efc;
+	color: black;
+}
+#wrapper {
+    margin-left: auto;
+    margin-right:auto;
+    /* */
+    width: 400px;
+    /* */
+}
+
+h1, h2, h3 {
+    color:#468966;
+    margin-top:0;
+    }
+
+table {
+    margin-left: auto;
+    margin-right:auto;
+
+    width: 100px;
+
+    }
+blockquote {
+
+    margin-left: auto;
+    margin-right:auto;
+
+    width: 40%;
+    }
+title
+{
+    font-weight: bold;
+    color: black;
+    font-family: sans-serif;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 14px;
+}
+p.last {
+   font-size: 10px;
+    }
+
+

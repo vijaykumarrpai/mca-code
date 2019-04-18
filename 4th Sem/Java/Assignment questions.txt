@@ -1,0 +1,31 @@
+1) What is the different between a Firm, Company, Industry, Enterprise and Startup.
+2) What is an OS?
+3) Difference between JDK and JRE
+4) Difference between C, C++ and Java
+5) Versioning in Java
+6) 1      *     1           1                   1
+   12     *#    1 1         1 2               1 2 1
+   123... *#*   1 1 2       1 2 6           1 2 3 2 1
+ 	  *#*#  1 1 2 3     1 2 6 2 4
+		1 1 2 3 5 
+7) String text = "PESU". Display ASCII value of each character of the above given    string of arrays.
+8) Find 2nd Largest and 2nd Smallest no from the array.
+9) Declare array of different datatype and find inbuilt/predefined class name
+10) Function name to generate random number
+11) Display individual characters from array of string
+12) Find how to use forEach loop?
+13) Java is 100% object oriented programming? Justify Yes or not.
+14) Print "HAPPY V-DAY" "FLAMES"
+15) Write about nested class / inner class
+16) Write a program to convert any given number to words format
+17) Exception handling and how to handle it.
+18) Define Adapter class
+19) Define Shallow and Deep cloning
+20) Exception Hierarchy
+21) Try first parent exception and child exception and see whether there is any error
+22) Difference between final, finally and finalize()?
+23) Methods in thread class (Daemon threads)
+24) One package and Gender determination program
+25) Program on Synchronizing threads
+26) Program with following threads methods - isAlive(), Destroy() and Synchronized()
+27) Flow chart of OS threads to program or assimulator.

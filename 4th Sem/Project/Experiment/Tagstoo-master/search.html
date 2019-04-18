@@ -1,0 +1,422 @@
+<!-- <!DOCTYPE HTML> -->
+
+<!--
+* Copyright 2017-2018, Pablo Andueza pabloandumundu@gmail.com
+
+* This file is part of Tagstoo.
+
+* Tagstoo is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+
+* Tagstoo is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+
+* You should have received a copy of the GNU General Public License
+* along with Tagstoo.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <title>TAGSTOO (Search)</title>
+
+  <!-- Insert this line above script imports  -->
+  <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+  <script src="js/jquery-latest.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script> <!-- para select, drag y tooltips -->
+  <script src="js/interact.min.js"></script> <!-- para adaptar anchuras -->
+  <script src="js/jquery.pressAndHold.js"></script>
+  <script src="js/alertify.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/undoactions.js"></script>
+  <script src="js/popups.js"></script>
+  <script src="js/jquery.tinycolorpicker.js"></script>
+  <script src="js/abigimage.jquery.js" defer></script>
+  <script src="js/blazy.js"></script>
+  <script src="js/searcher.js"></script>
+
+  <!-- Insert this line after script imports -->
+  <script>if (window.module) module = window.module;</script>
+  
+  <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+  <link href="css/tinycolorpicker.css" rel="stylesheet" type="text/css">
+  <link href="css/alertify.core.css" rel="stylesheet" type="text/css">
+  <link href="css/alertify.default.css" rel="stylesheet" type="text/css">
+  <link href="css/tags.css" rel="stylesheet" type="text/css">
+  <link href="css/controlesmedia.css" rel="stylesheet" type="text/css">
+  <link href="css/abigimage.jquery.css" rel="stylesheet" type="text/css">  
+  <link href="css/estilos.css" rel="stylesheet" type="text/css">
+  <link href="css/searcher.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+  <!-- temporal para desarrollo -->
+  <div id="panel">
+    <button id="undo">Undo</button>
+    <button onclick="readAllTags()" draggable="true">List All Tags</button>
+    <button onclick="newTag()">Add Tag</button>
+    <button onclick="deleteTag(12)">Delete Tag</button>
+    <button onclick="resetTags()">Reset All tags</button>
+    <button onclick="populateTags()">Populate Tags</button>
+    <button onclick="funciontemporallistarcarpetascontags()">probandotagscarpetas</button>
+    <button onclick="funciontemporallistarfilescontags()">probandotagsarchivos</button>
+    <button onclick="funciontemporallistarcarpetfavoritas()">Listar fav-folders</button>
+    <button id="paneloff">Cerrar panel</button>
+  </div>
+  <!--  -->
+
+  <div id="popupbackground"></div>
+  <div id="popup"></div>
+
+  <div id="searchview">
+
+    <div id="search">
+
+      <a id="selectFolder" class="medium button yellow" title="">
+        <span class="lang_en">Select to search from..</span>
+        <span class="lang_es">Seleccionar para buscar desde..</span>
+        <span class="lang_fr">Sélectionnez pour chercher à partir de..</span>
+      </a>
+
+      <span>
+        <span class="lang_en_b">Search starting from: </span>
+        <span class="lang_es_b">Buscar empezando desde: </span>
+        <span class="lang_fr_b">Chercher à partir de: </span>
+      </span>
+      <div id="searchin">
+      <div contenteditable id="searchininput" title=""></div>
+      </div>
+
+
+      <div class="searchfolderinput">
+        <span class="lang_en">Inside folders that have:</span>
+        <span class="lang_es">Dentro de carpetas que tienen:</span>
+        <!-- <span class="lang_fr">Dossiers à l'intérieur qui ont:</span> -->
+        <span class="lang_fr">À l'intérieur des dossiers qui ont:</span>
+
+        <div class="foldertaginput" value="" title=""></div>
+        <a class="clearfoldertagfield small button red" title="">
+          <span class="lang_en">Remove last</span>
+          <span class="lang_es">Quitar última</span>
+          <span class="lang_fr">Enlever dernier</span>
+        </a>
+        <a class="addtagfield small button green tooltipaddfoldertagf" onclick="addfoldertagfield(this)" title="">
+          <span class="lang_en">Another (That have) filter...</span>
+          <span class="lang_es">Otro filtro (Que tienen)...</span>
+          <span class="lang_fr">Autre filtre (Qui ont)...</span>
+        </a>
+
+      </div>
+
+
+      <div id="searchfor">
+
+        <label class="lang_en" style="margin-bottom: 2px">Search for:</label>
+        <label class="lang_es" style="margin-bottom: 2px">Buscar:</label>
+        <label class="lang_fr" style="margin-bottom: 2px">Chercher:</label>
+
+        <br>
+
+        <div class="container tooltipfiles">
+
+          <input type = "radio"
+                 name = "searchfor"
+                 id = "files"
+                 value = "files" 
+                 checked = "checked" />
+          <label for = "files">
+            <span class="radio lang_en">Files</span>
+            <span class="radio lang_es">Archivos</span>
+            <span class="radio lang_fr">Archives</span>
+          </label>
+
+        </div>
+
+        <div class="container tooltipfolders">
+
+          <input type = "radio"
+                 name = "searchfor"
+                 id = "folders"
+                 value = "folders" />
+          <label for = "folders">
+            <span class="radio lang_en">Folders</span>
+            <span class="radio lang_es">Carpetas</span>
+            <span class="radio lang_fr">Dossiers</span>
+          </label>
+
+        </div>
+
+        <div class="container tooltipfodersandfiles">
+        
+          <input type = "radio"
+                 name = "searchfor"
+                 id = "foldersandfiles"
+                 value = "foldersandfiles"/>
+          <label for = "foldersandfiles">
+            <span class="radio lang_en">Folders and Files</span>
+            <span class="radio lang_es">Carpetas y Archivos</span>
+            <span class="radio lang_fr">Dossiers et Archives</span>
+          </label>
+        
+        </div>
+
+        <div id="tagstosearch">
+
+
+          <div class="searchinput">
+            <span class="lang_en">That have:</span>
+            <span class="lang_es">Que tienen:</span>
+            <span class="lang_fr">Qui ont:</span>
+
+            <div class="taginput" value="" title=""></div>
+            <a class="cleartagfield small button red">
+              <span class="lang_en">Remove last</span>
+              <span class="lang_es">Quitar última</span>
+              <span class="lang_fr">Enlever dernier</span>
+            </a>
+            <a class="addtagfield small button green tooltipaddtagf" onclick="addtagfield(this)" title="">
+              <span class="lang_en">Another (That have) filter...</span>
+              <span class="lang_es">Otro filtro (Que tienen)...</span>
+              <span class="lang_fr">Autre filtre (Qui ont)...</span>
+            </a>
+            <br>
+          </div>
+
+          <div class="searchnotinput">
+            <span class="lang_en_b">That don't have:</span>
+            <span class="lang_es_b">Que no tienen:</span>
+            <span class="lang_fr_b">Qui n'ont pas:</span>
+            
+            <div class="nottaginput" value="" title=""></div><br>
+            <a class="clearnottagfield small button red">
+              <span class="lang_en">Remove last</span>
+              <span class="lang_es">Quitar última</span>
+              <span class="lang_fr">Enlever dernier</span>
+            </a>
+            <a class="addtagfield small button green tooltipaddnotagf" onclick="addnottagfield(this)" title="">
+              <span class="lang_en">Another (That don't have) filter...</span>
+              <span class="lang_es">Otro filtro (Que no tienen)...</span>
+              <span class="lang_fr">Autre filtre (Qui n'ont pas)...</span>
+            </a>
+            <br>
+          </div>
+
+          <a id="searchaction" class="large button green">
+            <span class="lang_en">Search</span>
+            <span class="lang_es">Buscar</span>
+            <span class="lang_fr">Chercher</span>
+          </a>
+
+          <div id="clearresults">
+            <img src="img/clear.png" alt="" title="In selected copy tags from...">
+          </div>
+          
+<!--           <br>
+
+<a id="clearresults" class="large button red">
+  <span class="lang_en">Clean results</span>
+  <span class="lang_es">Limpiar resultados</span>
+  <span class="lang_fr">Nettoyer résultats</span>
+</a> -->
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div> <!-- fin #searchview -->
+
+  <div id="locationinfo">
+
+    <div id="searchlocationinfonotfixed">
+
+      <span id="numeroderesultadoscarpetas"></span><span id="numeroderesultadosarchivos"></span>
+      
+      <label for="searchviewmode">
+      <span class="lang_en">S.Viewmode: </span>
+      <span class="lang_es">B.Vista modo: </span>
+      <span class="lang_fr">C.Vue mode: </span>
+      <span id="viewmodenumber">1.</span></label>      
+      <input id="searchviewmode" name="searchviewmode" type="range" min="1" max="9" step="1" value="1" title="">
+
+      <span class="toptext lang_en">S.Order by: </span>
+      <span class="toptext lang_es">B.Ordernar por: </span>
+      <span class="toptext lang_fr">C.Trier par: </span>
+      <span class="lang_en">
+          <select class="searchorder" title="">          
+            <option value="nameasc" selected>Name A-Z</option>
+            <option value="namedesc">Name Z-A</option>
+            <option value="extasc">Extension A-Z</option>
+            <option value="extdesc">Extension Z-A</option>
+            <option value="sizeasc">Size Small-Big</option>
+            <option value="sizedesc">Size Big-Small</option>
+            <option value="lastdesc">LastMod New-Old</option>
+            <option value="lastasc">LastMod Old-New</option>
+            <option value="aleator">Aleatory!</option>
+          </select>
+        </span>
+        <span class="lang_es">
+          <select class="searchorder" title="">          
+            <option value="nameasc" selected>Nombre A-Z</option>
+            <option value="namedesc">Nombre Z-A</option>
+            <option value="extasc">Extensión A-Z</option>
+            <option value="extdesc">Extensión Z-A</option>
+            <option value="sizeasc">Pequeño-Grande</option>
+            <option value="sizedesc">Grande-Pequeño</option>
+            <option value="lastdesc">Modificado N-A</option>
+            <option value="lastasc">Modificado A-N</option>
+            <option value="aleator">¡Aleatorio!</option>
+          </select>
+        </span>
+        <span class="lang_fr">
+          <select class="searchorder" title="">          
+            <option value="nameasc" selected>Nom A-Z</option>
+            <option value="namedesc">Nom Z-A</option>
+            <option value="extasc">Extension A-Z</option>
+            <option value="extdesc">Extension Z-A</option>
+            <option value="sizeasc">Petit-Large</option>
+            <option value="sizedesc">Large-Petit</option>
+            <option value="lastdesc">Modifié N-V</option>
+            <option value="lastasc">Modifié V-N</option>
+            <option value="aleator">Aléatoire!</option>
+          </select>
+        </span>
+      <span id="tolist"><img src="img/listaicon.png" title=""></span>
+      &nbsp;
+      <span id="status"></span>
+
+
+      <span class="toptext lang_en">Elements per page: </span>
+      <span class="toptext lang_es">Elementos por página: </span>
+      <span class="toptext lang_fr">Éléments par page: </span>
+      <span class="lang_en">
+
+        <select class="elempperpage" title="">          
+              <option value="0" selected>All</option>
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="40">40</option>
+              <option value="80">80</option>
+              <option value="150">150</option>
+              <option value="300">300</option>
+              <option value="500">500</option>
+            </select>
+
+      </span>
+
+      <span class="lang_es">
+
+        <select class="elempperpage" title="">          
+              <option value="0" selected>Todos</option>
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="40">40</option>
+              <option value="80">80</option>
+              <option value="150">150</option>
+              <option value="300">300</option>
+              <option value="500">500</option>
+            </select>
+
+      </span>
+
+      <span class="lang_fr">
+
+        <select class="elempperpage" title="">          
+              <option value="0" selected>Tout</option>
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="40">40</option>
+              <option value="80">80</option>
+              <option value="150">150</option>
+              <option value="300">300</option>
+              <option value="500">500</option>
+            </select>
+
+      </span>
+
+      <span class="toptext lang_en">&nbsp;Page: </span>
+      <span class="toptext lang_es">&nbsp;Página: </span>
+      <span class="toptext lang_fr">&nbsp;Page: </span>
+
+      <div class="number-input">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown(); $('#actualpage').trigger('change');" >&ndash;</button>
+        <input type="number" name="actualpage" id="actualpage" min="1" max="1" value="1" size="3" title="">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp(); $('#actualpage').trigger('change');" class="plus">+</button>
+      </div>
+      /
+      <span id="necesarypages">1</span>      
+
+    </div> 
+
+  </div>
+
+
+
+  <div id="copieron">
+    <span class="lang_en"><img src="img/tagcopieron_EN.gif" alt=""></span>
+    <span class="lang_es"><img src="img/tagcopieron_ES.gif" alt=""></span>
+    <span class="lang_fr"><img src="img/tagcopieron_FR.gif" alt=""></span>
+  </div>
+  <div id="copytags">
+    <a><img src="img/copiatags.png" alt="" title="In selected copy tags from..."></a>
+  </div>
+  <div id="eraseron">
+    <span class="lang_en"><img src="img/tageraseron_EN.gif" alt=""></span>
+    <span class="lang_es"><img src="img/tageraseron_ES.gif" alt=""></span>
+    <span class="lang_fr"><img src="img/tageraseron_FR.gif" alt=""></span>
+  </div>
+  <div id="eraser">
+    <a><img src="img/eraser.png" alt="" title="Tag eraser."></a>
+  </div>
+
+  <div id="searchdirview-wrapper">
+  <input type="file" id="selectedactionFolder" name="selectedactionFolder" nwdirectory style="display: none;" onchange="selectedactionfolder(); this.value=null; return false;" />
+
+    <div id="searchdirview">
+      <div id="searchdirectoryview">
+      </div>
+    </div>
+
+  </div>
+
+  <div id="bottom" class="searcherbottom">
+
+    <div id="bottomleft">
+      <div id="botonestag">
+        <a class="small button green" onclick="newTag()">
+            <span class="lang_en">Add New Tag</span>
+            <span class="lang_es">Añadir Nueva Etiqueta</span>
+            <span class="lang_fr">Ajouter Nouveau Étiquette</span>
+        </a>
+        <a class="small button orange" onclick="editTag()">
+            <span class="lang_en">Edit/Remove Tag</span>
+            <span class="lang_es">Editar/Suprimir Etiqueta</span>
+            <span class="lang_fr">Éditer/Supprimer Étiquette</span>
+        </a>
+      </div>
+
+    </div>
+
+    <div id="bottomright">
+
+      <div id="tagpar"></div>
+      <div id="taginpar"></div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

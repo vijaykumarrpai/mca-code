@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Image to use:</p>
+<img id="ModernArt" width="200" height="220" src="rk.jpeg" alt="The ModernArt">
+
+<p>Canvas:</p>
+<canvas id="myCanvas" width="250" height="265" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script>
+window.onload = function() {
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    var img = document.getElementById("ModernArt");
+    ctx.drawImage(img, 8, 8);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<body>
+<font size ="3" style="verdana" color="maroon">
+<script type="text/javascript">
+
+var str = "13.5 percent VAT";
+
+var intval = parseInt(str);
+document.write("parseInt of \"" + str + "\" is " + intval + "<br />");
+
+
+var fltval = parseFloat(str);
+document.write("parseFloat of \"" + str + "\" is " + fltval + "<br />");
+
+var str_alphabet = "abcd efgh ijkl mnop qrst uvwx yz";
+var intunknown = parseInt(str_alphabet);
+document.write("parseInt of \"" + str_alphabet + "\" is " + intunknown + "<br /><hr />");
+
+
+document.write("Example of string conversion to number for operators -, *, /<br />");
+var str = parseFloat(str);
+document.write("<br />string containing number is \"" + str + "\"");
+
+var val_sub = str - 5.0;
+document.write("<br />subtration(str - 5.0): " + val_sub);
+
+var val_mult = str * 5.0;
+document.write("<br />multiplication(str * 5.0): " + val_mult);
+
+var val_div = str / 5.0;
+document.write("<br />division(str / 5.0): " + val_div);
+
+</script>
+</font>
+</body>
+</html>

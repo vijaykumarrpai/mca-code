@@ -1,0 +1,8 @@
+Input was received as:
+usr_name=admin&security=MIIBOjCBpDCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAv5jaQd1gkcCGmODj%0D%0A1uCtBbCQVWhAnOFzR%2BI6yK9DHiGNDiJgd8ClIOMwpQSdAc%2FYBEnT1jqk7G7jsN9N%0D%0AsONRjU%2B5Rm%2BPNkcK%2BNP5hztCGyUgktNS8ISG8sf%2FnlZOzn5VuOeJgT0hi1XezAcn%0D%0AyM18hGvGWmO6irYakABe1tiwZZkCAwEAARYAMA0GCSqGSIb3DQEBBAUAA4GBAGDM%0D%0AZBGrBe3gNLVxQwntdPE6lcKbZIe6RqaceHI5%2BNRS0kqCxmePWDFoiIEb7MKuM8rk%0D%0AvzoM05u8Scr64gAL8%2BSm4JwtwxVqEg1S0odK01Cbks27njtDTLJDdHyAQO9scvzm%0D%0AIAC%2FwdAgHzBhWlty2j5QiFzCV1GaT2pLlu5t7T9y
+
+This page was returned to you from the server. The server has processed your input and returned this answer.
+
+It is not a part of the HTML5 tutorial to teach you how the server is processing this input. If you want to learn more about processing form input, please read our PHP or ASP tutorial.
+
+Use the back button in the browser to return to the example.

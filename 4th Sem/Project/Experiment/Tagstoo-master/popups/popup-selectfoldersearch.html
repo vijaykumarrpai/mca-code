@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<!--
+* Copyright 2017-2018, Pablo Andueza pabloandumundu@gmail.com
+
+* This file is part of Tagstoo.
+
+* Tagstoo is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+
+* Tagstoo is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+
+* You should have received a copy of the GNU General Public License
+* along with Tagstoo.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<title>Select Folder to Search</title>
+
+	<link href="css/jqueryFileTree.css" rel="stylesheet" type="text/css">
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+	        language = localStorage["language"];
+
+			if (language == 'EN') {
+				$(".lang_en").css("display", "inline-block");
+				$(".lang_es").css("display", "none");
+				$(".lang_fr").css("display", "none");
+				// display:block (para algun span)
+				$(".lang_en_b").css("display", "block");
+				$(".lang_es_b").css("display", "none");
+				$(".lang_fr_b").css("display", "none");
+				} else if (language =='ES') {
+				$(".lang_en").css("display", "none");
+				$(".lang_es").css("display", "inline-block");
+				$(".lang_fr").css("display", "none");
+				// display:block (para algun span)
+				$(".lang_en_b").css("display", "none");
+				$(".lang_es_b").css("display", "block");
+				$(".lang_fr_b").css("display", "none");		
+			} else if (language == "FR") {
+				$(".lang_en").css("display", "none");
+				$(".lang_es").css("display", "none");
+				$(".lang_fr").css("display", "inline-block");
+				// display:block (para algun span)
+				$(".lang_en_b").css("display", "none");
+				$(".lang_es_b").css("display", "none");
+				$(".lang_fr_b").css("display", "block");						
+			}			
+
+		});
+	</script>
+
+	<style>
+		#treeview {
+			top:0;
+			background-color: white;
+			border-radius: 5px;
+			height:calc(100% - 50px);
+			margin-right: 5px;
+			width: 50%;
+
+		}
+		#treeview li {
+			padding-top: 0 2px;
+		}
+		.searchin {
+			max-width: 45%;
+		}
+		.searchin div {
+			padding: 0 4px !important;
+		}
+		.selectfoldbutt {
+			margin-bottom: 5px;
+			margin-right: 3px;
+		}
+	</style>
+
+</head>
+<body>	
+
+	<div id="popuptitle">
+		<span class="lang_en">SELECT FOLDER TO SEARCH IN</span>
+		<span class="lang_es">SELECCIONAR PARA BUSCAR EN</span>							 
+		<span class="lang_fr">SÉLECTIONNEZ POUR CHERCHER DANS</span>
+	</div>
+
+	<br>
+	<hr>
+	 <div id="treeview">
+
+      <div id="filetree"></div>
+
+    </div>
+
+	<p>
+		<span class="lang_en_b">&larr; Click to expand, double-click to select.</span>
+		<span class="lang_es_b">&larr; Clic para expandir, doble clic para seleccionar.</span>
+		<span class="lang_fr_b">&larr; Cliquez pour étendre, double-cliquez pour sélectionner.</span>
+	</p>
+	<span>
+	    <span class="lang_en_b">Search in: </span>
+	    <span class="lang_es_b">Buscar en: </span>
+	    <span class="lang_fr_b">Chercher dans: </span>
+  	</span>
+	<div id="searchin" class="searchin"><div></div></div>
+
+	<br>
+	<br>
+
+	<a class="medium button green selectfoldbutt" onclick="choseroot()">
+		<span class="lang_en">Choose ROOT</span>
+		<span class="lang_es">Elegir RAÍZ</span>
+		<span class="lang_fr">Choisissez ROOT</span>
+	</a>
+	<a class="medium button orange selectfoldbutt" onclick="cerrar()">
+		<span class="lang_en">Cancel</span>
+		<span class="lang_es">Cancela</span>
+		<span class="lang_fr">Annuler</span>
+	</a>
+	<a class="medium button green selectfoldbutt" onclick="acceptsearchfolder(this); cerrar()">
+		<span class="lang_en">Accept</span>
+		<span class="lang_es">Aceptar</span>
+		<span class="lang_fr">Accepter</span>
+	</a>
+
+	<script>
+		selectfoldersearchpreload();
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+Rearranges the data according to the new index, introducing missing values if any index values are not already present.
+Series/dataframe.reindex(index, method, fill_value, limit, tolerance, level, copy)
+index - new sequence to use as index
+method - ffill(forward fill), bfill(backward fill), nearest
+fill_value - substitute value to be used while introducing missing data
+limit - maximize size gap to fill
+tolerance - maximum size gap to fill for inexact matches 
+level - mathc simple idnex on level of multiindex
+copy - if true always copy underlying data even in index
+
+working with text
+lower()
+upper()
+len()
+strip()
+split('')
+cat(sep='')
+
+Matplotlib is a python library used to create 2D graphs and plots by using python scripts
+plt.plot(x axis values, y axis values)
+plt.title("Title") 
+plt.xlabel("Label of X Axis")
+plt.xlabel("Label of Y Axis")
+plt.plot((x,y, 'color'))

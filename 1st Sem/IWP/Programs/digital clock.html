@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Javascript Digital Clock - An example of a Timer</title>
+
+<script language="javascript" type="text/javascript">
+
+var dateform, speed=1000;//,tid=0;
+
+  function dodate()
+  { f.date.value=new Date();
+    //tid=window.
+    setTimeout("dodate()",speed);
+  }
+  
+  function start(x)
+  {
+  f=x;
+  //tid=window.
+  setTimeout("dodate()",speed);
+  }
+  
+ /* function cleartid()
+  {
+  window.clearTimeout(tid);
+  }
+ */ 
+</script>
+</head>
+
+<body onload="start(document.dateform) ;">
+<center>
+Digital Clock
+<form name="dateform" action="post">
+<input type="text" name="date" size=54>
+</form>
+</center>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<head>
+<title>Div Horizontal</title>
+<style type="text/css">
+body {
+        background-color: #EFECCA;
+        color: black;
+        margin:0;
+        padding:0;
+        }
+#wrapper {
+    background-color: white;
+    width: 801px;
+    margin: 0 auto;
+    border-left: 2px solid #D8D0AC;
+    border-right:2px solid #D8D0AC
+    }
+/*
+#sidebar {
+        width: 200px;
+        float: right;
+    }
+*/
+#header {
+    height: 75px;
+    margin: 10px;
+    border-color: black;
+    border-bottom: 3px solid;
+    }
+.menu {
+    float: left;
+    padding: 5px;
+    margin: 3px;
+    background-color:#ccc;
+    color: #FFF0A5;
+    }
+#section1 {
+        margin:0 200px 0 0;
+        width: 600px;
+        border-left: 1px solid;
+        background-color:#ffcc00;
+        clear: both;
+    }
+#footer {
+    margin: 0;
+    }
+h1,h2,h3,h4,h5,h6 {
+    margin: 10px;
+}
+
+h1 {
+    margin-top: 0;
+    padding: 13px 0;
+    }
+</style>
+
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+<h3>Menu 1</h3>
+
+<p class="menu">
+<a href="div_example_1.html" >Example 1</a></p>
+<p class="menu">
+<a href="div_example_2.html" >Example 2</a></p>
+<p class="menu">
+<a href="div_example_3.html" >Example 3</a></p>
+<p class="menu">
+<a href="div_example_4.html" >Example 4</a></p>
+<p class="menu">
+<a href="div_example_5.html" >Example 5</a></p>
+<p> </p>
+
+</div> <!-- header -->
+
+<div id="section1">
+<h1>Content</h1>
+<h2>Replacing the Contents of the Current Frame</h2>
+<p>Clicking on these links will open the new page within the current frame.</p>
+<ul>
+	<li><a href="white.html" target="content">Load white page</a></li>
+	<li><a href="green.html" target="content">Load green page</a></li>
+</ul>
+
+<h2>Replacing the Whole Frameset</h2>
+<p>When you click on any of the following links, the whole frameset is replaced with the new website. This is because we're using <code>target="_top"</code> in the anchor links.</p>
+<ul>
+	<li><a href="http://www.quackit.com" target="_top">Quackit</a></li>
+	<li><a href="http://www.quackit.com/html/templates/frames/" target="_top">HTML Frames Templates</a></li>
+	<li>Learn more about frames with the <a href="http://www.quackit.com/html/tutorial/html_frames.cfm" target="_top">frames tutorial</a></li>
+</ul>
+
+<h2>Open a New Window</h2>
+<p>These links open in a new browser window. This is because we use <code>target="_blank"</code>.</p>
+<ul>
+	<li><a href="http://www.code-generator.net" target="_parent">Code Generator</a></li>
+	<li><a href="http://www.zappyhost.com" target="_blank">ZappyHost</a></li>
+	<li><a href="http://www.natural-environment.com" target="_blank">Natural Environment</a></li>
+	<li><a href="http://www.great-workout.com" target="_blank">Great Workout</a></li>
+</ul>
+<p id="footer"></p>
+</div> <!-- section1 -->
+
+</div> <!-- wrapper -->
+</body>
+</html>

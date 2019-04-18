@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div {
+    width: 300px;
+    height: 100px;
+    background-color: orange;
+    border: 1px solid green;
+}
+
+div#myDiv {
+    -ms-transform: skewY(20deg); /* IE 9 */
+    -webkit-transform: skewY(20deg); /* Safari */
+    transform: skewY(20deg); /* Standard syntax */
+}
+
+</style>
+</head>
+<body>
+
+<p>The skewY() method skews an element along the Y-axis by the given angle.</p>
+
+<div>
+This a normal div element.
+</div>
+
+<div id="myDiv">
+This div element is skewed 20 degrees along the Y-axis.
+</div>
+
+</body>
+</html>

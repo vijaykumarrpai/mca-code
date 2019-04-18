@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<!--
+* Copyright 2017-2018, Pablo Andueza pabloandumundu@gmail.com
+
+* This file is part of Tagstoo.
+
+* Tagstoo is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+
+* Tagstoo is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+
+* You should have received a copy of the GNU General Public License
+* along with Tagstoo.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<title>Select Destination Folder (no tag)</title>
+
+	<link href="css/jqueryFileTree.css" rel="stylesheet" type="text/css">
+
+	<style>
+		#treeview {
+			top:0;
+			background-color: white;
+			border-radius: 5px;
+			height:calc(100% - 50px);
+			margin-right: 5px;
+			width: 50%;
+
+		}
+		#treeview li {
+			padding-top: 4px;
+		}
+		.searchin {
+			max-width: 45%;
+		}
+		.searchin div {
+			padding: 0 3px;
+		}
+		.selectfoldbutt {
+			margin-bottom: 5px;
+			margin-right: 3px;
+		}
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+	        language = localStorage["language"];
+
+			if (language == 'EN') {
+				$(".lang_en").css("display", "inline-block");
+				$(".lang_es").css("display", "none");
+				$(".lang_fr").css("display", "none");
+				// display:block (para algun span)
+				$(".lang_en_b").css("display", "block");
+				$(".lang_es_b").css("display", "none");
+				$(".lang_fr_b").css("display", "none");
+				} else if (language =='ES') {
+				$(".lang_en").css("display", "none");
+				$(".lang_es").css("display", "inline-block");
+				$(".lang_fr").css("display", "none");
+				// display:block (para algun span)
+				$(".lang_en_b").css("display", "none");
+				$(".lang_es_b").css("display", "block");
+				$(".lang_fr_b").css("display", "none");		
+			} else if (language == "FR") {
+				$(".lang_en").css("display", "none");
+				$(".lang_es").css("display", "none");
+				$(".lang_fr").css("display", "inline-block");
+				// display:block (para algun span)
+				$(".lang_en_b").css("display", "none");
+				$(".lang_es_b").css("display", "none");
+				$(".lang_fr_b").css("display", "block");						
+			}			
+
+		});
+	</script>
+		
+</head>
+<body>
+
+	<div id="popuptitle">
+		<span class="lang_en">SELECT THE DESTINATION FOLDER (Tags? No)</span>
+		<span class="lang_es">SELECCIONAR LA CARPETA DE DESTINO (Etiquetas? No)</span>
+		<span class="lang_fr">SÉLECT. DOSSIER DE DESTINATION (Étiquettes? Non)</span>
+	</div>
+
+	<br>
+	<hr>
+	 <div id="treeview">
+
+      <div id="filetree"></div>
+
+    </div>
+
+	
+	<p>
+		<span class="lang_en_b">&larr; Click to expand, double-click to select.</span>
+		<span class="lang_es_b">&larr; Clic para expandir, doble clic para seleccionar.</span>
+		<span class="lang_fr_b">&larr; Cliquez pour étendre, double-cliquez pour sélectionner.</span>
+	</p>
+	<span class="lang_en">Selected drive: </span>
+	<span class="lang_es">Unidad seleccionada: </span>
+	<span class="lang_fr">Unité sélectionnée: </span>
+	<span id="selecteddrive"></span><!-- <div id="drivedesc"></div> -->
+	<br>
+	<span class="lang_en">Change drive:</span>
+	<span class="lang_es">Cambiar unidad:</span>
+	<span class="lang_fr">Changer l'unité:</span>
+	<select name="unitselect" id="unitselect" form="initialoptions"></select>
+	<span>
+	    <span class="lang_en_b">Destination folder: </span>
+	    <span class="lang_es_b">Carpeta de destino: </span>
+	    <span class="lang_fr_b">Dossier de destination: </span>
+  	</span>
+	<div id="selectedfolder" class="searchin"><div></div></div>
+
+	<br>
+	<br>
+
+	<a class="medium button orange selectfoldbutt" onclick="cerrar()">
+		<span class="lang_en">Close</span>
+		<span class="lang_es">Cerrar</span>
+		<span class="lang_fr">Fermer</span>
+	</a>
+	<a class="medium button green selectfoldbutt" id="acceptdestination">
+		<!-- se carga el innerhtml del botón dinámicamente (porque es para copiar o para mover) -->
+	</a> 
+	<script>
+		selectfolderactionnotagpreload();
+	</script>
+
+</body>
+</html>

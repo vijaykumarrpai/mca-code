@@ -1,0 +1,16 @@
+Reinforcement Learning for Autonomous Vehicle Route Optimisation
+https://becominghuman.ai/reinforcement-learning-for-autonomous-vehicle-route-optimisation-d97efec9abbd
+
+https://github.com/JakeCracknell/courier
+
+
+
+Courier services are designed to be as efficient as possible, which requires multiple steps on a large scale.
+The first step is the one that most senders are familiar with. When you book a courier service online with Parcel2Go, 
+your courier will come and collect the parcel you’ve booked either from a specific address — that could be your place of 
+work or your home — or from a drop-off location.
+From there, the courier will take your parcel (along with hundreds of others collected that same day) to the nearest depot. 
+
+At the depot, you parcel is sorted with others that are addressed to a similar area. Parcels will often be sent to 
+another depot closer to the delivery location, where it will be assigned to a driver based on their area of coverage.
+The next driver takes your parcel from the depot and delivers it to the recipient on his or her delivery route.

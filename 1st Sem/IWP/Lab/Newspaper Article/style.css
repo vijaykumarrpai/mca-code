@@ -1,0 +1,62 @@
+/* General */
+
+* {
+  font-family: "Times New Roman", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+body{
+  margin: 0px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+}
+
+table{
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    border-style: none;
+    /* margin: 20px; */
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  box-shadow: 2px 2px 2px 1px black;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-left{
+    text-align: left;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.text-justify, p{
+    text-align: justify;
+}
+
+.heading{
+    padding: 20px;
+}
+
+.sub-heading{
+    font-size: 30px;
+}
+
+.para{
+    padding: 20px;
+}

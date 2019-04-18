@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<canvas id="myCanvas" width="300" height="300" style="border:1px solid; color:#CC00CC;">Canvas cannot be displayed</canvas>
+<script type="text/javascript">
+	var c = document.getElementById("myCanvas");
+	var ctx = c.getContext("2d");
+	ctx.beginPath();
+	ctx.arc(130,150,90,4,2.3 * Math.PI);
+	ctx.stroke();
+	ctx.fillStyle = "red";
+	ctx.fill();
+	
+	ctx.font = "20px Arial";
+	ctx.fillStyle = "green";
+	ctx.fillText("PESU",95,100);
+	</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>We open at <time>08:00</time> every morning.</p>
+
+<p>PES University is celebrating 70th Independence day flag hoisting ceremony. 
+<time datetime="2016-08-15 08:30"> Come and Join</time>.</p>
+
+<p><b>Note:</b> The time element does not render as anything special in any of the major browsers.</p>
+<!--
+Dates:
+<time datetime="1914"> means the year 1914 -->
+<time datetime="1914-12">  <!-- means December 1914 -->
+<time datetime="1914-12-20">  <!-- means 20 December 1914 -->
+<time datetime="12-20">  <!-- means 20 December any year -->
+<time datetime="1914-W15">  <!-- means week 15 of year 1914 -->
+<!--
+Date and Times:
+<time datetime="1914-12-20T08:00">   means 20 December 1914 at 8am -->
+<time datetime="1914-12-20 08:00">  <!-- also means 20 December 1914 at 8am -->
+<time datetime="1914-12-20 08:30:45">  <!-- with minutes and seconds -->
+<time datetime="1914-12-20 08:30:45.687">  <!-- with minutes, seconds, and milliseconds -->
+<!--
+Times:
+<time datetime="08:00">   means 8am -->
+<time datetime="08:00-03:00">  <!-- means 8am in Rio de Janeiro (UTC-3 hours)  -->
+<time datetime="08:00+03:00">  <!-- means 8am in Madagascar (UTC+3 hours)  -->
+<!--
+Durations:
+<time datetime="P2D">   means a duration of 2 days -->
+<time datetime="PT15H10M">  <!-- means a duration of 15 hours and 10 minutes -->
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="200" height="200" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+//ctx.beginPath();
+ctx.arc(95,50,40,0,2*Math.PI);
+
+//context.arc(x,y,r,sAngle,eAngle,clockwise);
+//ctx.arc(100,75,50,0*Math.PI,1.5*Math.PI)
+
+
+ctx.stroke();
+ctx.fillStyle = "red";
+ctx.fill();
+
+</script> 
+
+</body>
+</html>

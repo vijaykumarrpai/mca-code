@@ -1,0 +1,4 @@
+It contains data structures and data manipulation tools that make data cleaning and analysis fast and easy in python.
+Pandas work on heterogenous or tabular data
+it has to be imported as
+import pandas as pd

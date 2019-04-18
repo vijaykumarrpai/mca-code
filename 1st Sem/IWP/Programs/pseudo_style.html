@@ -1,0 +1,36 @@
+<?xml version = "1.0"  encoding = "utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml1-strict.dtd">
+
+<!-- pseudo.html
+     Illustrates the :hover and :focus pseudo classes
+     -->
+<html xmlns = "http://www.w3.org/1999/xhtml">
+  <head> <title> Pseudo Classes </title>
+    <style type = "text/css">
+      input:hover {background: lightgray; color: red;}
+      input:focus {background: lightblue; color: blue;}
+
+      a.new:link {color: green;}
+      a.new:visited {color:red;}
+      a.new:hover {color: yellow;}
+
+    </style>
+  </head>
+  <body>
+    <form action = "">
+      <p>
+        Your name:
+        <input type = "text"  />
+      </p>
+    </form>
+    <p>
+    This is the example of hyperlinks. The two premier education institutes in Bangalore are
+    <ol>
+        <li><a class="new" href="http://www.pes.edu">PES Institute of Technology.</a>
+        <li><a href="http://www.vtu.ac.in">Visvesvaraya Technological University><a/>
+    </ol>
+    Use this to understand how links display change before and after visiting the site.
+    </p>
+  </body>
+</html>

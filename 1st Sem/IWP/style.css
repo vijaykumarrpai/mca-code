@@ -1,0 +1,25 @@
+    #cake4
+	{
+		font-size:25px;	
+		font-family:'Lucida Calligraphy';
+		font-weight: 'italics';
+		color: red;
+	}
+
+	table
+	{
+		border-style: dotted;
+	}
+
+	p.cake5
+	{
+		color: blue;
+		font-family: 'Arial';
+		font-style: italic;
+		font-size: 25px;
+	}
+
+	body
+	{
+		background-color: #9599E1;
+	}

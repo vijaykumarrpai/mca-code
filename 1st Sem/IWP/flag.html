@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flag</title>
+</head>
+<style type="text/css">
+	canvas {
+	/*	width: auto;
+		height: auto;*/
+	}
+</style>
+<body>
+ <canvas id="flag">
+ 	
+ </canvas>
+ <script type="text/javascript">
+ 	var canvas = document.getElementById("flag");
+ 	var ctx = canvas.getContext('2d');
+
+    ctx.fillStyle = "#ff6d00";
+ 	ctx.fillRect(10, 10, 250, 50);
+ 	ctx.fillStyle = "#1b5e20";
+ 	ctx.fillRect(10, 100, 250, 50);
+
+ 	ctx.beginPath();
+ 	ctx.fillStyle = "blue";
+    ctx.arc(135, 80, 18, 0, Math.PI * 2, true); 
+    ctx.stroke();
+
+ </script>
+</body>
+</html>

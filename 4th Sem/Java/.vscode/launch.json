@@ -1,0 +1,31 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Test",
+            "request": "launch",
+            "mainClass": "Test",
+            "projectName": "Java_aaf37291"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Vehicle",
+            "request": "launch",
+            "mainClass": "Vehicle",
+            "projectName": "Java_aaf37291"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - FactFib",
+            "request": "launch",
+            "mainClass": "FactFib",
+            "projectName": "Java_b2c60bed"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Student",
+            "request": "launch",
+            "mainClass": "Student"
+        }
+    ]
+}

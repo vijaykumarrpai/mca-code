@@ -1,0 +1,7 @@
+ettercap
+select network interface
+identify the hosts on a network
+go to host menu and scan the host
+select the host to target with arp spoofing
+Add the target for which you want to spoof
+select arp poisoning and tick sniff remote connections

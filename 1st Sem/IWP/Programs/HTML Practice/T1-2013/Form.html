@@ -1,0 +1,47 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head><title> SBI Reg Form </title> 
+<style type = "text/css">
+      input:hover {background: pink;color:red;}
+      input:focus {background: lightblue;color:green;}
+   * {font-family: 'Times New Roman'; color: brown; font-size: 15pt;}
+</style>
+<script type="text/javascript">
+function submit1()
+{ 
+alert("Information submitted successfully"); }
+</script>
+</head>
+<body>
+<h3>Customer Registration Form</h3>
+<form method="" action="">
+Acc No. :<input type="text" name="firstname" size="11"><br /><br/>
+Acc Holder name/Uid : <input type="text" name="name"><br /><br/>
+Password :<input type="password" name="password"><br/><br/>
+AccType:&nbsp;&nbsp;
+Current <input type="radio" name="account" value="Current"> 
+Savings <input type="radio" name="account" checked="checked" value="savings"> 
+Fixed <input type="radio" name="account" value="fixed"> 
+Loan <input type="radio" name="account" value="loan"><br/><br/>
+Date of Birth:(DD-MM-YYYY)<br/>		
+Day<select name = "day" size="1"><option> 1 </option>.....<option> 31 </option></select>
+Month<select name = "month" size="1"> <option> Jan </option>......<option> Dec </option></select>	Year<select name = "year" size="1"> <option> 1900</option>......<option> 2020</option></select>
+<br/><br/>Gender :
+&nbsp;&nbsp;&nbsp;Male: 
+<input type="radio" checked="checked" name="Sex" value="male">
+&nbsp;&nbsp;&nbsp;
+Female: 
+<input type="radio" name="Sex" value="female">
+<br /><br />Service request : 
+&nbsp;&nbsp;ATM <input type="checkbox" name="service value="atm">
+&nbsp;&nbsp;Internet Banking <input type="checkbox" name="service value="internet">
+&nbsp;&nbsp;Phone Banking <input type="checkbox" name="service value="phone">
+<br /><br/>Upload your Photo :<input type="file" value="document"><br />
+<input type="submit" value="submit" onclick="submit1()">
+<input type="reset" value="clear">
+</form>
+</body>
+</html>

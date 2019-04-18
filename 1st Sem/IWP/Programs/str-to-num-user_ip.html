@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<body>
+
+<script type="text/javascript">
+var str_num1 = prompt("Enter number 1: ", "");
+var str_num2 = prompt("Enter number 2: ", "");
+
+var add_direct = str_num1 + str_num2;
+var add_conv = parseInt(str_num1) + parseInt(str_num2);
+var add_str_bef = ":Answer:" + parseInt(str_num1) + parseInt(str_num2);
+var add_str_aft = parseInt(str_num1) + parseInt(str_num2) + ":Answer:";
+
+document.write("<br />Add value before parsing = " + add_direct );
+document.write("<br />Add value after parsing = " + add_conv);
+document.write("<br />" + add_str_bef);
+document.write("<br />" + add_str_aft);
+
+document.write( "<br />");
+</script>
+
+</body>
+</html>

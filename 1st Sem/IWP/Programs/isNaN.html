@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>The isNaN() function returns true if the value is NaN (Not-a-Number), and false if not.</p>
+
+<p>Click the button to check whether a number is an illegal number.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var res = "";
+    res = res + isNaN(123) + ": 123<br>";
+    res = res + isNaN(-1.23) + ": -1.23<br>";
+    res = res + isNaN(5-2) + ": 5-2<br>";
+    res = res + isNaN(0) + ": 0<br>";
+    res = res + isNaN('123') + ": '123'<br>";
+    res = res + isNaN('Hello') + ": 'Hello'<br>";
+    res = res + isNaN('2005/12/12') + ": '2005/12/12'<br>";
+    res = res + isNaN('') + ": ''<br>";
+    res = res + isNaN(true) + ": true<br>";
+    res = res + isNaN(undefined) + ": undefined<br>";
+    res = res + isNaN('NaN') + ": 'NaN'<br>";
+    res = res + isNaN(NaN) + ": NaN<br>";
+    res = res + isNaN(0 / 0) + ": 0 / 0<br>";
+
+    document.getElementById("demo").innerHTML = res;
+}
+</script>
+
+</body>
+</html>

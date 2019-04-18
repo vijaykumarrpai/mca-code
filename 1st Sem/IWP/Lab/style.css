@@ -1,0 +1,70 @@
+.section{
+	padding: 20px;
+	background-color: lightyellow;
+	margin-bottom: 20px;
+}
+
+.article1{
+	border: 10px solid black;
+	padding: 20px;
+	width: 200px;
+	height: 150px;
+	background: #8AC007;
+	border-radius: 15px 50px 30px 5px;
+}
+
+.article2{
+	border: 10px solid red;
+	padding: 20px;
+	width: 200px;
+	height: 150px;
+	background: #8AC007;
+	border-radius: 15px 50px 30px;
+	float: right;
+}
+
+.article3{
+	border: 10px solid cyan;
+	padding: 20px;
+	width: 200px;
+	height: 150px;
+	background: #8AC007;
+	border-radius: 15px 50px;
+}
+
+.article4{
+	border: 10px solid violet;
+	padding: 20px;
+	width: 200px;
+	height: 150px;
+	background: #8AC007;
+	border-radius: 50px;
+}
+
+.img{
+background-repeat: repeat;
+background: url(tomcat.png);
+width: 500px;
+height:500px;
+float: right;
+}
+
+.img2{
+height: 500px;
+width: 500px;
+background-color: blue;
+box-shadow: 10px 10px 8px darkgreen;
+}
+
+.top{
+	color: rgba(3,2,2,0.1);
+	text-shadow: 2px 2px 3px violet,0px 0px 5px brown;
+}
+
+.heading{
+	text-shadow: 1px 1px 2px cyan,0 0 25px blue, 0 0 5px darkgreen;
+	font-size: 25px;
+	font-family: Verdana;
+	font-weight: bold;
+	font-style: italic;
+}

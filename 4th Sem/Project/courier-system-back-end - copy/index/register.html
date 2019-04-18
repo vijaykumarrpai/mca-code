@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+        <meta name="keywords" content="Register Login Widget template Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login Signup Responsive web template, SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+        <title>Optimizing Courier Delivery System</title>
+        <script type="application/x-javascript"> addEventListener("load", function() { 
+            setTimeout(hideURLbar, 0); }, false); 
+            
+            function hideURLbar(){ 
+                window.scrollTo(0,1); 
+                } 
+                var x = document.getElementById("latitude");
+                var y = document.getElementById("longitude");
+
+                function getLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.watchPosition(showPosition);
+                } else { 
+                    x.innerHTML = "Geolocation is not supported by this browser.";
+                }
+                }
+    
+                function showPosition(position) {
+                    x.innerHTML="Latitude: " + position.coords.latitude + 
+                   y.innerHTML = "<br>Longitude: " + position.coords.longitude;
+                }
+        </script>
+        <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+        <link href='//fonts.googleapis.com/css?family=Jura:400,300,500,600' rel='stylesheet' type='text/css'>
+    </head>
+<body>
+    <div class="agile">
+        <div class="signin-form profile">
+            <h3>Create an account</h3>
+
+            <div class="login-form">
+                <form action="/" method="post">
+                    <input type="text" name="name" placeholder="Name" required="">
+                    <input type="text" name="email" placeholder="E-mail" required="">
+                    <input type="text" name="mobno" placeholder="Mob-no" required="">
+                    <input type="text" name="address" placeholder="Your Address" required="">
+                    <input type="password" name="password" placeholder="Password" required="">
+                    <input type="password" name="passwordConf" placeholder="Confirm Password" required="">
+                    <input type="text" name="latitude" placeholder="Latitude" id="latitude">
+                    <input type="text" name="longitude" placeholder="Longitude" id="longitude">
+                    <input type="submit" value="Create Account" name="submit" onclick="getLocation()">      
+                    <a href="./index.html">Back to Login</a>
+                </form>
+            </div>
+            <p><a href="#">By clicking register, I agree to your terms</a></p>
+        </div>
+    </div>
+</body>
+</html>

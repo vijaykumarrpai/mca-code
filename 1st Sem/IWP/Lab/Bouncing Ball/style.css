@@ -1,0 +1,104 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.ball {
+  background: radial-gradient(farthest-corner at 60px 45px, black 0%, orange 50%);
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+}
+
+.ball-shadow {
+  background: radial-gradient(50% 50%, #000 0%, #fff 100%);
+  height: 50px;
+  width: 200px;
+}
+
+.bouncy-castle {
+  height: 600px;
+  left: 50%;
+  position: absolute;
+}
+
+.bouncy-castle .ball-shadow {
+  animation-direction: alternate;
+  animation-duration: 1s;
+  animation-name: grow;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: 1s;
+  animation-name: grow;
+  animation-iteration-count: infinite;
+  bottom: 0;
+  position: absolute;
+  margin-left: -100px;
+}
+
+.bouncy-castle .ball {
+  animation-direction: alternate;
+  animation-duration: 1s;
+  animation-name: bounce;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: 1s;
+  animation-name: bounce;
+  animation-iteration-count: infinite;
+  margin-left: -100px;
+  position: absolute;
+}
+
+@-webkit-keyframes grow {
+  from {
+    bottom: 0;
+    margin-left: -100px;
+    height: 50px;
+    opacity: 1;
+    width: 200px;
+  }
+
+  to {
+    bottom: -15px;
+    margin-left: -150px;
+    height: 80px;
+    opacity: 0.4;
+    width: 300px;
+  }
+}
+
+@keyframes grow {
+  from {
+    bottom: 0;
+    margin-left: -100px;
+    height: 50px;
+    width: 200px;
+  }
+
+  to {
+    bottom: 20px;
+    margin-left: 0;
+    height: 10px;
+    width: 15px;
+  }
+}
+
+@-webkit-keyframes bounce {
+  from {
+    bottom: 20px;
+  }
+
+  to {
+    bottom: 100%;
+  }
+}
+
+@keyframes bounce {
+  from {
+    bottom: 20px;
+  }
+
+  to {
+    bottom: 100%;
+  }
+}

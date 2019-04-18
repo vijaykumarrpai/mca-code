@@ -1,0 +1,17 @@
+Input : Set of unsorted numbers.
+Output : Count of number of times a particular element occurs. 
+
+for i <- 0 t0 n-2 do
+	for j <- i+1 to n-2 do
+		for k <- 0 to n-2 do
+			if a[i]! = arr[k]
+				if a[i] == a[j]
+
+				  count[i]++;
+				  break;
+			     
+			  arr[i] = a[i];
+		      
+for k <- 0 to n-2 do
+print(c[k]);
+		  

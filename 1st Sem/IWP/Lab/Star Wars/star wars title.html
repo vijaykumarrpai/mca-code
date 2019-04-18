@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Star Wars Scroll</title>
+<style type="text/css">body {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+}
+
+.fade {
+  position: relative;
+  width: 100%;
+  min-height: 1100%;
+  top: -25px;
+  background-image: linear-gradient(0deg, transparent, black 75%);
+  z-index: 1;
+}
+
+.star-wars {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 800px;
+  color: brown;
+  font-family: 'Times New Roman', sans-serif;
+  font-size: 500%;
+  font-weight: 600;
+  letter-spacing: 6px;
+  line-height: 150%;
+  perspective: 400px;
+  text-align: justify;
+}
+
+.crawl {
+  position: relative;
+  top: 9999px;
+  transform-origin: 50% 100%;
+  animation: crawl 60s linear;
+}
+
+.crawl > .title {
+  font-size: 90%;
+  text-align: center;
+}
+
+.crawl > .title h1 {
+  margin: 0 0 100px;
+  text-transform: uppercase;
+}
+
+@keyframes crawl {
+  0% {
+    top: 0;
+    transform: rotateX(20deg)  translateZ(0);
+  }
+  100% { 
+    top: -6000px;
+    transform: rotateX(25deg) translateZ(-2500px);
+  }
+}</style>
+</head>
+<body>
+<div class="fade"></div>
+
+<section class="star-wars">
+
+  <div class="crawl">
+
+    <div class="title">
+      <p>STAR WARS</p>
+      <p>Episode VIII</p>
+      <h1>The Last Jedi</h1>
+   
+    
+    <p>Directed by 	Rian Johnson</p>
+	<p>Produced by 	Kathleen Kennedy 
+	                Ram Bergman</p>
+    <p>Written  by	Rian Johnson</p>
+            <p>Starring	</p>
+           <p>Mark Hamill</p>
+		  <p>Carrie Fisher</p>
+		  <p>Adam Driver</p>
+          <p>Daisy Ridley</p>
+         <p>John Boyega</p>
+         <p>Oscar Isaac</p>
+         <p>Andy Serkis</p>
+         <p>Lupita Nyong'o</p>
+         <p>Domhnall Gleeson</p>
+         <p>Anthony Daniels</p>
+       <p>Music by	John Williams</p>
+      <p>Cinematography Gilbert Taylor</p>
+             <p>Edited by</p>
+            <p>Paul Hirsch</p>
+            <p>Marcia Lucas</p>
+            <p>Richard Chew</p>
+             <p>Production company</p>   
+           <p>Lucasfilm Ltd.</p>
+   <p>Distributed by 20th Century Fox</p>
+    <p> Release date December 15, 2017 (United States)</p>
+      <p>Running time 121 minutes</p>
+        <p>Country United States</p>  
+ </div>
+</div>
+</section>
+</body>
+</html>

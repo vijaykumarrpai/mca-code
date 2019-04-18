@@ -1,0 +1,15 @@
+img {float: right}
+p.p1{ margin: 20px;
+      background-color: yellow;
+      color: blue;
+     }
+
+p.p2{ font-size: 18pt;
+      font-family: Arial;     
+      font-style: italic;
+     }
+
+p.p3{ text-indent: 1cm;
+      font-weight: bold;
+      text-decoration:overline;
+     }     

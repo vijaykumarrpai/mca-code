@@ -1,0 +1,23 @@
+<html>
+<head>
+<style>
+p
+{
+text-shadow:5px 5px 2px blue;
+}
+</style>
+<script>
+var array = new Array();
+array.push("What is your name?");
+array.push("Where do you work?");
+array.push("Are you married?");
+array.push("What is your annual income?");
+array.push("AT what time do you come home?");
+var rnd = Math.floor((Math.random()*4)+0);
+document.write("Question"+(rnd+1)+":");
+document.write("<p>"+array[rnd]+"</p>");
+ 
+</script>
+</head>
+
+</html>

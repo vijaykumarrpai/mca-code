@@ -1,0 +1,15 @@
+1. Program to check given number is prime or not
+2. Program to Display range of prime numbers using sieve algorithm 
+3. Algorithm to find the number of binary digits in the binary representation of a positive decimal integer.
+4. Program for demonstration of file handling.
+5. Write selection sort algorithm and trace it for any 8 three digit number.
+6. Algorithm to improve efficiency of bubblesort
+7. Implementation of kruskal algorithm using union find technique.
+8. Write five properties of pascal triangle and write algorithm for binomial coefficient using dynamic programming.
+9. Consider the instance of knapsack problem with dynamic programming. Use bottom up approach to fill the table and illustrate how efficiency can be improved using memory location
+10. Apply quicksort algorithm to string "QUICK SORT".
+11. Write a program on Fake coin problem.
+12. Write a short note on decision trees and give its different outcomes.
+13. Write Decision tree for 3 element insertion sort.
+14. Write Decision tree for 3 element selection sort.
+15. Write Decision tree for 3 element binary search.

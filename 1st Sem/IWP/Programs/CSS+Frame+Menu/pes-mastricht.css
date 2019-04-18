@@ -1,0 +1,32 @@
+body {
+
+	background-color:#efc;
+	color: black;
+}
+
+
+h1, h2, h3 {
+    color:#468966;
+    margin-top:0;
+/*    font-size:120%; */
+    }
+
+title
+{
+    font-weight: bold;
+    color: black;
+    font-family: sans-serif;
+    text-transform: uppercase;
+}
+
+p {
+    /* font-size: 12px; */
+    /* font-size: 12px !important; */
+
+}
+
+p.last {
+   font-size: 10px;
+    }
+
+

@@ -1,0 +1,56 @@
+Tkinter provides the following top level windows
+tk_chooseColor
+tk_chooseDirectory
+tk_Dialog
+tk_getOpenFile
+
+Tk also provides three geometry managers
+place - positions widgets at absolute locations
+grid - arranges widgets in a grid
+pack - packs widgets into a cavity
+
+mainloop() - To do this has to be called once and only once, when the applications is ready to run. It is an infinite loop
+
+widgets syntax -> w = Label(master, option, ...) - new widget created
+options :
+bg - sets background color 
+cursor - can be "arrow", "circle", "clock", "cross", "dotbox", "exchange", "fluer", "heart", "man", "mouse", "pirate", "plus", "shuttle"
+bg - size of border. Default is 2 pixels
+font
+text
+width
+underline
+fg
+relief - SUNKEN, RAISED, GROOVE, RIDGE
+
+w = Button(master, option = value, ...)
+options - 
+activebackground
+activeforeground
+image
+
+w = Checkbutton(master, option, ...)
+options - 
+command - A procedure to be called every time the user changes the state of this Checkbutton
+offvalue
+onvalue
+state
+
+w = Canvas(master, option = value, ...)
+options  -
+confine
+height
+scrollregion - (w, n, e, s)
+width
+xscrollincrement
+xscrollcommand
+yscrollincrement
+yscrollcommand
+
+arc = canvas.create_arc(coord, start = 0, extent = 150, fill = "blue")
+image - 
+filename = PhotoImage(file = "sunshine.gif")
+image = canvas.create_image(50, 50, anchor = NE, image = filename)
+line = canvas.create_line(x0, y0, x1, y1, ..., xn, yn, options)
+oval = canvas.create_oval(x0, y0, x1, y1, options)
+oval = canvas.create_polygon(x0, y0, x1, y1, ... xn, yx, options)

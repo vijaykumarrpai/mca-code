@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<body>
+
+<script>
+var value = 0; // a global variable. Comment it to see the impact
+function getValue(param1, param2)
+{
+    var value; // it is a local variable to the function
+    value = param1 * param2;
+    return value;
+}
+
+// var mathTable; // should be uncommented
+do {
+    mathTable = prompt("Please Specify the integer for Math Table computation: ");
+} while (isNaN(mathTable) == true);
+
+
+for (var ii = 1; ii <= mathTable; ii++)
+{
+   {
+   var valueNew; // becomes a global variable and not scope variable
+   valueNew = getValue(mathTable, ii);
+   document.write(mathTable + " * " + ii + " = " + valueNew);
+   document.write ("<br>");
+   }
+}
+document.write("<br /> ii becomes global var, the value = " + ii);
+
+</script>
+
+</body>
+</html>

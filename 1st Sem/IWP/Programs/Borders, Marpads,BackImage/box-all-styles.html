@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- marpads.html
+     An example to illustrate margins and padding
+     -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <title>Box all styles </title>
+  <style type="text/css">
+    p.none  {
+                border-style:none;
+               background-color: darkgrey;
+               }
+      p.one {
+              border-style: dotted;
+              border-width: thin;
+              border-color: red;
+               background-color: #e0e0e0;
+              }
+      p.two{
+                border-style:dashed;
+                border-width: thin;
+                border-color: green;
+                border-top-width: medium;
+                border-bottom-width:thick;
+               background-color: #e0e0e0;
+              }
+      p.three {
+               border-style: double;
+               border-width: medium;
+               border-top-color: red;
+               border-bottom-color: green;
+               border-left-color: blue;
+               border-left-width: thick;
+               border-right-color: yellow;
+               background-color: #e0e0e0;
+              }
+      p.four  {
+                border-style:inset;
+                border-width: 20px;
+               background-color: #e0e0e0;
+               }
+      p.five  {
+                border-style:outset;
+               background-color: #e0e0e0;
+               }
+    </style>
+</head>
+
+<body>
+<p class="one">dotted thin blue </p>
+
+<p class="two">dashed border with different <br /> top, bottom and side widths </p>
+
+<p class="three">double border with<br /> with different border colors</p>
+
+<p class="four">double border style</p>
+
+<p class="five">outset border style</p>
+
+<p class="none">none border style</p>
+
+<p>Here is the last line with no specified style. </p>
+</body>
+</html>

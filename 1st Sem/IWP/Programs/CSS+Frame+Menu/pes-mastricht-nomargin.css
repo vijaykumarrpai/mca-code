@@ -1,0 +1,28 @@
+body {
+	margin:0;
+	background-color:#efc;
+	color: black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color:#468966;
+    margin:0;
+    }
+
+title
+{
+    font-weight: bold;
+    color: black;
+    font-family: sans-serif;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 14px;
+    margin: 0
+}
+p.last {
+    margin-bottom: 0;
+    }
+
+

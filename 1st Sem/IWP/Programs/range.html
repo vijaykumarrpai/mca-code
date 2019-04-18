@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><script type="text/javascript">
+function updateTextInput(val) {
+          document.getElementById('textInput').value=val; 
+        }
+</script></head>
+<body>
+
+<p>
+Depending on browser support:<br>
+The input type "range" can be displayed as a slider control.
+</p>
+
+<form action="action_page.php" method="get">
+  Points between 0 to 10:
+  <input type="range" name="points" min="0" max="10" >
+  <input type="submit">
+
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value);">
+<input type="text" id="textInput" value="">
+</form>
+
+<p>
+<b>Note:</b>
+type="range" is not supported in Internet Explorer 9 and earlier versions.
+</p>
+
+
+</body>
+</html>

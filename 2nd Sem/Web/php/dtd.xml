@@ -1,0 +1,26 @@
+<?xml version'1.0" encoding="ISO-8859-1" ?> 
+<rss version."2.0"> 
+<channel> 
+<title>BBC News I Entertainment I Film I UK Edition</title> 
+<link>http://news.bbc.co.uk/go/rss/-/l/hi/entertainment /film/default.stm</link> 
+<description>Updated every minute of every day</description>
+<language>en-gb</language> 
+<lastBuildDate>Fri, 16 Sep 2005 09: 58:43, GMT</lastBuildDate> 
+<copyright>Copyright: (C) British Broadcasting Corporation, see
+http://news.bbc.co.uk/l/hi/help/rss/4498287.stm for terms and conditions of reuse</copyright>
+<docs>http://www.bbc. co. uk/syndication/</docs>
+<tt1>15</ttl> 
+<image> 
+<title>BBC News</title>
+<ur1>http;//n~ws.bbc.co.uk/nol/shared/img/bbc_news_120x60.gif</url>
+<1inks-ht tp: / /news.bbc.co.uk</link>;
+</image>
+<item> 
+<title>Actress ends marriage</title> 
+<description>Actress RZ and singer KC seek an annulment after four months of marriage.</description> 
+<link>http://news.bbc.co.uk/go/rss/-/l/hi/entertainment /film/4251388. stm</l ink> 
+<guid isPerIlaLink=''false''>http://news.bbc.co.uk/l/hi/entertainment Ifilm/4251388.stm</guid> 
+<pubDate>Fri, 16 Sep 2005 07:41:15 GMT</pubDate> 
+</item> 
+</channel> 
+</rss> 

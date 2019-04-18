@@ -1,0 +1,28 @@
+1. Creates a file called list.
+
+2. When space is given before and after =, command prompt throws a message saying X : user not authorized to run the X server, aborting. When space is removed it returns the value stored in the variable successfully.
+
+3. ls | wc -l
+
+4. Multitasking example: Listening to song and simultaneously programming.
+   Multiuser example : Working on two terminals from different accounts by switching alternatively.
+
+5. That's because to execute anything in unix, appropriate unix command is to be given. eg: to execute f1 file, it has to be preceded by unix command like cat or gcc in c with any option which is not mandatory.
+
+6. No. Unix commands cannot be run in uppercase.
+
+7. Password string is not displayed on the terminal because it gives a little bit of extra security by not displaying a bunch of asterisks. That way someone who sees your screen can't see the length of your password.
+
+8. After pressing enter key, if it returns back to command prompt without displaying any message, that means the command has execeuted successfully.
+
+9. No. When executed with or without space, it doesn't make any difference. Gives same result. It creates a file called user.lst
+
+10. echo * and ls serves the same purpose ie displays the contents of the directory. But the difference is : echo * doesn't differentiate between a file and a directory. Whereas ls displays directory name in blue colour.
+
+11. echo "$SHELL" returns /bin/bash and echo '$SHELL' returns $SHELL.
+
+12. a) mkdir a/b/c - Doesn't work. Because it doesn't satisfy the syntax of unix command.
+    b) mkdir a a/b - Works. It creates a directory called a.
+    c) rmdir a/b/c - Doesn't work. Because first of all it says remove a b c but since directories a b c doesn't exist it cannot remove these directory. Also it is not the correct syntax. Even if a directory  exist it says failed to remove a/b/c. No such file or directory.
+    d) rmdir a a/b - Doesn't work because directory is not empty. Shows message: failed to remove a. 
+    e) mkdir /bin/foo - Works with sudo. But without sudo, it says cannot create directory '/bin/foo' : Permission denied. But with sudo it gets created, but doesn't show with ls command.

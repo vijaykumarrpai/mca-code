@@ -1,0 +1,15 @@
+1) select product.pid, product.name, inventory.stock 
+   from inventory inner join product on product.pid = inventory.pid 
+   where stock < 5;
+
+2) select distinct supplier2.sid, supplier2.name 
+   from product inner join manufactures on product.pid = manufactures.pid inner join supplies on product.pid = supplies.pid inner join manufacturer on manufacturer.mid = manufactures.mid inner join supplier2 on supplier2.sid = supplies.sid 
+   where manufacturer.name = 'manufacturer_2';
+
+3) select product.pid, product.name, inventory.stock
+   from product, inventory  
+   where product.pid = inventory.pid order by inventory.stock desc, product.pid desc;
+
+4) select distinct(product.pid), product.name  
+   from product, supplier2, supplies 
+   where supplier2.sid = supplies.sid and product.pid = supplies.pid group by product.pid, product.name;

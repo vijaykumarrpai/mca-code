@@ -1,0 +1,20 @@
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Adminloginfail {
+	public static void main(String[] args) {
+		WebDriver driver = null;
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Vijaykumar R Pai.LAPTOP-C26T1P75\\Downloads\\Compressed\\chromedriver.exe");
+		driver = new ChromeDriver();
+		String URL = "http://localhost:3000/";
+		driver.get(URL);
+		driver.findElement(By.name("logemail")).sendKeys("vijaykumarrpai@gmail.com");
+		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+		driver.findElement(By.name("logpassword")).sendKeys("987654321");
+		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+		driver.findElement(By.xpath("//input[@name = 'submit']")).click();
+	}
+}

@@ -1,0 +1,27 @@
+{
+  "name": "courier-system-front-end",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bcryptjs": "^2.4.3",
+    "connect-mongo": "^2.0.3",
+    "cors": "^2.8.5",
+    "create-react-app": "^2.1.8",
+    "email-validator": "^2.0.4",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "material-ui": "^0.20.2",
+    "mongoose": "^5.4.19",
+    "npm": "^6.9.0",
+    "react-login-signup-form": "^1.0.7",
+    "react-tap-event-plugin": "^3.0.3"
+  }
+}

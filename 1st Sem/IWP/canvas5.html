@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<canvas id="myCanvas" width="500" height="500" style="border:1px solid; color:#CC00CC;">Canvas cannot be displayed</canvas>
+<script type="text/javascript">
+	var c = document.getElementById("myCanvas");
+	var ctx = c.getContext("2d");
+	ctx.moveTo(50,50);
+	ctx.lineTo(50,350);
+	ctx.moveTo(50,350);
+	ctx.lineTo(350,350);
+	ctx.moveTo(350,350);
+	ctx.lineTo(350,50);
+	ctx.moveTo(350,50);
+	ctx.lineTo(50,50)
+	ctx.moveTo(200,100);
+	ctx.lineTo(100,300);
+	ctx.moveTo(200,100);
+	ctx.lineTo(300,300);
+	ctx.moveTo(100,300);
+	ctx.lineTo(300,300);
+	ctx.stroke();	
+</script>
+</body>
+</html>

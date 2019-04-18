@@ -1,0 +1,39 @@
+#vijay {
+	position: absolute;  
+	z-index: auto;  
+	background-color: red;
+	width: 300px;
+	height: 300px;
+}
+
+#prateek {
+	position: absolute;  
+	z-index: 1;  
+	left: 125px;  
+	top: 125px;  
+	background-color: blue;
+	width: 300px;
+	height: 300px;
+}
+
+#yogita {
+	position: absolute;  
+	z-index: 2;  
+	left: 250px;  
+	top: 250px;  
+	background-color: green;
+	width: 300px;
+	height: 300px;
+}
+
+#vijay:hover {
+	z-index: 3;
+}
+
+#prateek:hover {
+	z-index: 4;
+}
+
+#yogita:hover {
+	z-index: 5;
+}

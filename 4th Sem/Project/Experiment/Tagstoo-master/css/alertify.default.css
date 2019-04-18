@@ -1,0 +1,121 @@
+/* 
+* Copyright 2017-2018, Pablo Andueza pabloandumundu@gmail.com
+
+* This file is part of Tagstoo.
+
+* Tagstoo is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+
+* Tagstoo is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+
+* You should have received a copy of the GNU General Public License
+* along with Tagstoo.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+/* This stylesheet differs from the original in http://alertifyjs.com/ (Licensed under GPLv3). Is very modified to the use on the project Tagstoo */
+
+
+/**
+ * Default Look and Feel
+ */
+.alertify,
+.alertify-log {
+	font-size: 16px;
+}
+.alertify {
+	background: #FFF; /* dejar para que no haga efecto raro sobre el imageviewer */
+	background-image: url("../img/sneaker_mesh_fabric.png");
+	/* No hay manera de que renderize bien en el aviso de cerrar aplicacion, Se ha intentado poner varias url separadas por como y se ha intentado codificar en base64 la imagen sneaker_mesh_fabric.png para que accediera sin problemas, pero nada. */	
+
+	border: 10px solid #333; /* browsers that don't support rgba */
+	border: 10px solid rgba(0,0,0,.7);
+	border-radius: 8px;
+	box-shadow: 0 3px 3px rgba(0,0,0,.3);
+	-webkit-background-clip: padding;     /* Safari 4? Chrome 6? */
+	   -moz-background-clip: padding;     /* Firefox 3.6 */
+	        background-clip: padding-box; /* Firefox 4, Safari 5, Opera 10, IE 9 */
+}
+	.alertify-text {
+		border: 1px solid #CCC;
+		padding: 10px;
+		border-radius: 4px;
+	}	
+
+.alertify-log {
+	padding: 15px;
+	border-radius: 4px;
+	color: #FFF;
+	text-shadow: -1px -1px 0 rgba(0,0,0,.5);
+}
+	.alertify-log-error {
+		background: #FE1A00;
+		background: rgba(254,26,0,.9);
+	}
+	.alertify-log-success {
+		background: #5CB811;
+		background: rgba(92,184,17,.9);
+	}
+
+.alertify-buttons #alertify-cancel {
+	margin-right: 21px;
+}
+
+
+/* para link en mensaje "read this" */
+.alertify-message a:link {
+	color: #14559f;
+}
+/* retoque para que quede más centrado (checkbox novolver a mostrar...) */
+.alertify input[type="checkbox"] {
+	vertical-align: bottom;
+}
+
+
+#nexttip {
+
+	position: absolute;
+	/*height: 50px;*/
+	right: 135px;
+	right: 20px;
+	right: 38px;
+	bottom: 32px;
+	bottom: 77px;
+}
+
+
+
+
+a.buttontip{
+		background: #ECECEC;
+		border-radius: 10px;
+		padding: 7px 15px;
+		/*display: block;*/
+		/*font-family: arial;*/
+		font-weight: bold;
+		color:#7f7f7f;
+		text-decoration: none;
+		text-shadow:0px 1px 0px #fff;
+		border:1px solid #a7a7a7;
+		width: 145px;
+		margin:0px auto;
+		margin-top:100px;
+		box-shadow: 0px 2px 1px white inset, 0px -2px 8px white, 0px 2px 5px rgba(0, 0, 0, 0.1), 0px 8px 10px rgba(0, 0, 0, 0.1);
+		-webkit-transition:box-shadow 0.5s;
+	}
+	a.buttontip i{
+		float: right;
+		margin-top: 2px;
+	}
+	a.buttontip:hover{
+		box-shadow: 0px 2px 1px white inset, 0px -2px 20px white, 0px 2px 5px rgba(0, 0, 0, 0.1), 0px 8px 10px rgba(0, 0, 0, 0.1);
+		cursor: pointer;
+	}
+	a.buttontip:active{
+		box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5) inset, 0px -2px 20px white, 0px 1px 5px rgba(0, 0, 0, 0.1), 0px 2px 10px rgba(0, 0, 0, 0.1);
+		background:-webkit-linear-gradient(top, #d1d1d1 0%,#ECECEC 100%);
+	}

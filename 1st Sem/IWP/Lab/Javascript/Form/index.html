@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Registration</title>
+</head>
+<body>
+	<!-- <form action="register.php" method="post"> -->
+
+		<label>Name: </label>
+		<input type="text" name="name" id="name"><br><br>
+
+		<label>SRN: </label>
+		<input type="text" name="srn" id="srn"><br><br>
+
+		<label>Date of Admission: </label>
+		<input type="date" name="doa" id="doa"><br><br>
+		
+		<label>Email: </label>
+		<input type="email" name="email" id="email"><br><br>
+		
+		<label>Phone: </label>
+		<input type="tel" name="phone" id="phone"><br><br>
+
+		<label>Password: </label>
+		<input type="password" name="password" id="password"><br><br>
+		
+		<label>Confirm Password: </label>
+		<input type="password" name="confirm_password" id="confirm_password"><br><br>
+		
+		<label>Date of Birth: </label>
+		<input type="date" name="dob" id="dob"><br><br>
+		
+		<label>Card Type: </label>
+		<input type="radio" name="card"><label>Credit</label>
+		<input type="radio" name="card"><label>Debit</label><br><br>
+
+		<label>Amount: </label>
+		<input type="number" name="amount" id="amount"><br><br>
+
+		<label>Card Number: </label>
+		<input type="number" name="card_no" id="card_no"><br><br>
+
+		<label>Address: </label>
+		<textarea name="address" id="address" placeholder="Max 300"></textarea><br><br>
+
+		<input type="submit" name="submit" value="Submit" onclick="validateAll()">
+
+	<!-- </form> -->
+		<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

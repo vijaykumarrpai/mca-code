@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="300" height="150" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+var gradient = ctx.createLinearGradient(0, 0, 170, 0);
+gradient.addColorStop("0", "magenta");
+gradient.addColorStop("0.3", "blue");
+gradient.addColorStop("0.7", "red");
+gradient.addColorStop("1.0", "yellow");
+
+// Fill with gradient
+ctx.strokeStyle = gradient;
+ctx.lineWidth = 5;
+ctx.strokeRect(20, 20, 150, 100);
+
+</script>
+
+</body>
+</html>

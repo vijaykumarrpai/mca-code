@@ -1,0 +1,24 @@
+Toplevel - Toplevel widgets work as windows that are directly managed by the window manager.
+methods - 
+deiconify()
+frame()
+group(window)
+iconify()
+protocol(name, function)
+
+Paned window - A PanedWindow is a container widget that may contain any number of panes, arranged horizontally or vertically.
+options - 
+handlepad - default size is 8
+handlesize - default size is 8
+methods - 
+add(child, options)
+get(startindex, )
+
+w = LabelFrame(master, option, ...)
+options - 
+labelAnchor - e, en, es, n, ne, nw, s, se, sw, w
+highlightbackground
+
+Frame widget
+
+tkFileDialog is a module with open and save dialog functions

@@ -1,0 +1,64 @@
+<html>
+    <head>
+      <title>Student Information</title>
+        <script type="text/javascript">
+          function chkname()
+          {
+            var sname=document.getElementById("name");
+            var pos=sname.value.search(/[ a-zA-Z]+/);
+            if(sname.value=="")
+            {
+              alert("Enter the Name");
+              return false;
+             }
+            if(pos!=0)
+            {
+              alert("The format is not correct");
+              sname.select();
+              return false;
+            }
+           else
+          {
+              alert("Format is correct");
+              return true;
+          }
+       }
+
+       function chkmarks()
+       {
+          var smarks=document.getElementById("marks");
+          
+          var pos=smarks.value.search(/^[0-9][0-9]$/);
+          if(smarks.value=="")
+          {
+             alert("Enter Web Programming marks");
+             return false;
+          }
+          if(pos!=0)
+          {
+              alert("Enter mrks as 2 digit number");
+              smarks.select();
+              return false;
+          }
+          else
+          {
+               alert(" Marks Format is correct");
+               return true;
+          }
+          
+       }
+    </script>
+  </head>
+  <body>
+    <h3>Validation of Student information</h3>
+    <br /><br /><br />
+    <form action="">
+      <p>Student Name:<input type="text" id="name"/>
+         <br /><br /><br />
+      <p>Web Prog Marks:<input type="text" id="marks"/>
+         <br /><br /><br />
+      <input type="submit" id="submit" value="submit-name" onclick = "chkname(name)"/>
+      <input type="submit" id="submit" value="submit-marks" onclick= "chkmarks(marks)"/>
+    </form>
+  </body>
+</html>

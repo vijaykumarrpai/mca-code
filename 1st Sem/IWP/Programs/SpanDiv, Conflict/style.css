@@ -1,0 +1,19 @@
+body
+{
+	background-color: "lavender";
+}
+
+
+p.one	{ 	margin: 0.3in;
+ 	  	    padding: 0.2in;
+	        font-weight:bold;
+		      background-color: #C0C0C0;
+	  	    border-style: dashed;
+	    
+	    }
+
+span.blue {  	 color: #000033;  
+	     	       font-weight:bold;
+	             font-size: 20pt;	
+           }
+

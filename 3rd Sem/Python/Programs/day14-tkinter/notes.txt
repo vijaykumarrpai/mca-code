@@ -1,0 +1,21 @@
+Menubar - 
+postcommand
+tearoff
+title
+
+menubar methods - 
+index(item)
+invoke(index)
+type(index)
+
+radiobutton - w = Radiobutton(master, option, ...)
+anchor options - N, S, W, E, SW, NW, NE, SE, EN, ES, WN, WS
+
+w = Scrollbar(master, option, ...)
+
+Entry
+w = entry(master, option, ...)
+
+w = spinbox(master, option, ...)
+
+w = Scale(master, option, ...)

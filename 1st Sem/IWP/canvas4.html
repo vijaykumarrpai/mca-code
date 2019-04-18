@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<canvas id="myCanvas" width="400" height="400" style="border:1px solid; color:#CC00CC;"></canvas>
+<script type="text/javascript">
+	var c = document.getElementById("myCanvas");
+	var ctx = c.getContext("2d");
+	ctx.strokeRect(50,50,150,75);
+	ctx.fillStyle = "red";
+	ctx.shadowBlur = 100;
+	ctx.shadowColor = "yellow";
+	ctx.fillRect(10,10,150,75);
+	</script>
+</body>
+</html>
