@@ -12,6 +12,9 @@ var nodes = [];
 var prevNodes = [];
 var markers = [];
 var durations = [];
+var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var labelIndex = 0;
+
 
 // Initialize google maps
 function initializeMap() {
@@ -22,7 +25,11 @@ function initializeMap() {
         streetViewControl: false,
         mapTypeControl: false,
     };
+    
     map = new google.maps.Map(document.getElementById('map-canvas'), opts);
+
+    var trafficLayer = new google.maps.TrafficLayer();
+        trafficLayer.setMap(map);
 
     // Create map click event
     google.maps.event.addListener(map, 'click', function(event) {
@@ -36,8 +43,11 @@ function initializeMap() {
         clearDirections();
         
         // Add a node to map
-        marker = new google.maps.Marker({position: event.latLng, map: map});
+        marker = new google.maps.Marker({position: event.latLng, 
+        label: labels[labelIndex++ % labels.length],
+        map: map,});
         markers.push(marker);
+        
         
         // Store node's lat and lng
         nodes.push(event.latLng);
@@ -64,7 +74,19 @@ function initializeMap() {
         google.maps.event.addDomListener(myLocationBtn, 'click', function() {
             navigator.geolocation.getCurrentPosition(function(success) {
                 map.setCenter(new google.maps.LatLng(success.coords.latitude, success.coords.longitude));
-                map.setZoom(12);
+                map.setZoom(15);
+
+                var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(success.coords.latitude, success.coords.longitude),
+                map: map,
+                title: 'Here are You',
+                label: labels[labelIndex++ % labels.length]
+        });
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+
+				
             });
         });
     }
@@ -501,7 +523,9 @@ var ga = {
 </head>
 <body>
 <div>
-  <div id="map-canvas" style="width:660px; height:560px;"></div>
+<h1 align = 'center' >Optimizing Courier Delivery System</h1>
+<h2 align = 'center' >Maximum 9 location is available for Routing</h2>
+  <div id="map-canvas" style="width:100%; height:560px; " ></div>
   <div class="hr vpad"></div>
   <div>
     <table>
@@ -527,61 +551,7 @@ var ga = {
                 </select>
             </td>
         </tr>
-        <tr>
-            <td>Population Size: </td>
-            <td>
-                <select id="population-size">
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="50" selected="selected">50</option>
-                    <option value="100">100</option>
-                    <option value="200">200</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>Mutation Rate: </td>
-            <td>
-                <select id="mutation-rate">
-                    <option value="0.00">0.00</option>
-                    <option value="0.05">0.01</option>
-                    <option value="0.05">0.05</option>
-                    <option value="0.1" selected="selected">0.1</option>
-                    <option value="0.2">0.2</option>
-                    <option value="0.4">0.4</option>
-                    <option value="0.7">0.7</option>
-                    <option value="1">1.0</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>Crossover Rate: </td>
-            <td>
-                <select id="crossover-rate">
-                    <option value="0.0">0.0</option>
-                    <option value="0.1">0.1</option>
-                    <option value="0.2">0.2</option>
-                    <option value="0.3">0.3</option>
-                    <option value="0.4">0.4</option>
-                    <option value="0.5" selected="selected">0.5</option>
-                    <option value="0.6">0.6</option>
-                    <option value="0.7">0.7</option>
-                    <option value="0.8">0.8</option>
-                    <option value="0.9">0.9</option>
-                    <option value="1">1.0</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>Elitism: </td>
-            <td>
-                <select id="elitism">
-                    <option value="1" selected="selected">Enabled</option>
-                    <option value="0">Disabled</option>
-                </select>
-            </td>
-        </tr>
+        
         <tr>
             <td>Max Generations: </td>
             <td>
