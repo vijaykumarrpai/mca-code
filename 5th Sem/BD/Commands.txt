@@ -1,0 +1,34 @@
+start-all.cmd - To start Hadoop
+http://localhost:8088/cluster - To see Hadoop Cluster
+http://localhost:8042/node - To see NodeManager
+http://localhost:50075/datanode.html - To see Datanode
+http://localhost:50070/dfshealth.html#tab-overview - To check Health of Hadoop
+hadoop fs - To see options in file command
+hadoop fs -help - Shows all commands in file system - Helps to manipulate any file system
+hdfs dfs - To show distributed file system - Helps to manipulate
+hadoop fs -mkdir /testing
+hadoop fs -ls /testing
+hadoop fs -mkdir /testing/subdir
+hadoop fs -ls /testing - Shows replicas of files in Hadoop - modified time - file name and path
+hadoop fs -copyFromLocal C:\BigData\hadoop-2.9.1\etc\hadoop\hadoop-env.sh /testing - To copy from local machine to Hadoop (First argument is source files and the second argument is the destination folder)
+hadoop fs -put C:\BigData\hadoop-2.9.1\etc\hadoop\core-site.xml /testing
+hadoop fs -ls /
+hadoop fs -ls /testing
+hadoop fs -ls /test
+hadoop fs -mkdir /test/
+hadoop fs -ls /
+hadoop fs -cp /testing/* /test - To copy contents from testing folder to test
+hadoop fs -ls /testing
+hadoop fs -ls /test
+mkdir fromdfs
+dir fromhdfs
+hadoop fs -get /test/* fromhdfs
+hadoop fs -cat /test/Sample.txt
+hadoop fs -rm -r /test/core-site.xml
+hadoop fs -du /testing
+hadoop fs du -s /testing - List of commands
+hadoop fs -du -h /testing
+hadoop fs -du -s /testing
+hadoop fs -du -s -h /testing
+hadoop fs -moveFromLocal fromhdfs/Sample.txt /testing
+dir fromhdfs
