@@ -1,67 +1,31 @@
-import java.sql.*;
+import java.sql.DriverManager;
+import java.sql.Connection;
+import java.sql.Statement;
+import java.sql.ResultSet;
+import java.util.Properties;
 
-public class Display {
-   
-   static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
-   static final String DB_URL = "jdbc:mysql://localhost/STUDENTS";
+class Display {
+	public static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
+	public static final String DATABASE_URL = "jdbc:mysql://localhost:3306/student";
+	public static final String DATABASE_USERNAME = "root";
+	public static final String DATABASE_PASSWORD = "Student@123";
 
-   
-   static final String USER = "username";
-   static final String PASS = "password";
-   
-   public static void main(String[] args) {
-   Connection conn = null;
-   Statement stmt = null;
-   try{
-      
-      Class.forName("com.mysql.jdbc.Driver");
-
-      
-      System.out.println("Connecting to a selected database...");
-      conn = DriverManager.getConnection(DB_URL, USER, PASS);
-      System.out.println("Connected database successfully...");
-      
-    
-      System.out.println("Creating statement...");
-      stmt = conn.createStatement();
-
-      String sql = "SELECT id, first, last, age FROM Registration";
-      ResultSet rs = stmt.executeQuery(sql);
-     
-      while(rs.next()){
-         
-         int id  = rs.getInt("id");
-         int age = rs.getInt("age");
-         String first = rs.getString("first");
-         String last = rs.getString("last");
-
-         
-         System.out.print("ID: " + id);
-         System.out.print(", Age: " + age);
-         System.out.print(", First: " + first);
-         System.out.println(", Last: " + last);
-      }
-      rs.close();
-   }catch(SQLException se){
-     
-      se.printStackTrace();
-   }catch(Exception e){
-    
-      e.printStackTrace();
-   }finally{
-      
-      try{
-         if(stmt!=null)
-            conn.close();
-      }catch(SQLException se){
-      }// do nothing
-      try{
-         if(conn!=null)
-            conn.close();
-      }catch(SQLException se){
-         se.printStackTrace();
-      }
-   }
-   System.out.println("Goodbye!");
-}
+	public static void main(String args[]) {
+		
+		Properties property = new Properties();
+		property.put("user", DATABASE_USERNAME);
+		property.put("password", DATABASE_PASSWORD);
+		
+		try {
+			Class.forName(JDBC_DRIVER);
+			Connection con = DriverManager.getConnection(DATABASE_URL, property);
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery("select * from student");
+			while (rs.next())
+				System.out.println(rs.getInt(1) + "  " + rs.getString(2) + "  " + rs.getString(3));
+			con.close();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
 }
