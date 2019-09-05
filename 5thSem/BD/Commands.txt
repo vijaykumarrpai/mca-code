@@ -1,0 +1,89 @@
+start-all.cmd - To start Hadoop
+http://localhost:8088/cluster - To see Hadoop Cluster
+http://localhost:8042/node - To see NodeManager
+http://localhost:50075/datanode.html - To see Datanode
+http://localhost:50070/dfshealth.html#tab-overview - To check Health of Hadoop
+hadoop fs - To see options in file command
+hadoop fs -help - Shows all commands in file system - Helps to manipulate any file system
+hdfs dfs - To show distributed file system - Helps to manipulate
+hadoop fs -mkdir /testing
+hadoop fs -ls /testing
+hadoop fs -mkdir /testing/subdir
+hadoop fs -ls /testing - Shows replicas of files in Hadoop - modified time - file name and path
+hadoop fs -copyFromLocal C:\BigData\hadoop-2.9.1\etc\hadoop\hadoop-env.sh /testing - To copy from local machine to Hadoop (First argument is source files and the second argument is the destination folder)
+hadoop fs -put C:\BigData\hadoop-2.9.1\etc\hadoop\core-site.xml /testing
+hadoop fs -ls /
+hadoop fs -ls /testing
+hadoop fs -ls /test
+hadoop fs -mkdir /test/
+hadoop fs -ls /
+hadoop fs -cp /testing/* /test - To copy contents from testing folder to test
+hadoop fs -ls /testing
+hadoop fs -ls /test
+mkdir fromdfs
+dir fromhdfs
+hadoop fs -get /test/* fromhdfs - Copy from hadoop to local
+hadoop fs -cat /test/Sample.txt
+hadoop fs -rm -r /test/core-site.xml
+hadoop fs -du /testing
+hadoop fs du -s /testing - List of commands
+hadoop fs -du -h /testing
+hadoop fs -du -s /testing
+hadoop fs -du -s -h /testing
+hadoop fs -moveFromLocal fromhdfs/Sample.txt /testing
+dir fromhdfs
+
+hadoop fs -rm -f /test/core-site.xml
+hadoop fs -rm /test/core-site.xml
+hadoop fs -rm -safely /test/Samp.txt
+hadoop fs -du /testing
+hadoop fs -dus /testing
+hadoop fs -du -s /testing
+-h - human reading
+-r -R - Recursive
+-s - Summary
+hadoop fs -mv /test/hadoop-env.sh /testing/ - To move a file pr directory within different HDFS directories
+hadoop fs -mv /test/hadoop-env.sh /testing/hadoop-e.sh
+hadoop fs -ls /testing
+hadoop fs -getmerge /testing/hadoop-e.sh /testing/hadoop-env.sh fromhdfs/hadoop.txt- To merge n number of files in the HDFS
+hadoop fs -du /testing
+hadoop fs -stat /testing - To print statistics
+hadoop fs -tail /testing/hadoop-e.sh - Shows last 1 kb of the file
+hadoop fs -tail -f /testing/hadoop-e.sh
+hadoop fs -appendToFile - /testing/Sample.txt
+hadoop fs -cat /testing/Sample.txt
+hadoop fs -count /test
+hadoop fs -count -q /test - Total
+hadoop fs -count -h /test
+hadoop fs -count -q -v /test
+hadoop fs -count -u /test - Usage
+hadoop fs -checksum /test/Sample.txt
+hadoop fs -ls -C /testing - Display the paths of files and directories only
+ls -d - Directories are listed as plain files
+ls -h - Formats into human readable format
+ls -q - Print ?
+ls -R - Recursively list the contents of directories
+ls -t - Sort files by modification time
+ls -S - Sort files by size
+ls -r - Reverse the order of the sort
+ls -u - Use time of last access
+hadoop fs -find /test/S* - Find based on the pattern
+hadoop fs -find /test/*.sh
+hadoop fs -find /testing/*.sh
+hadoop fs -usage test
+hadoop fs -usage help
+hadoop fs -touchz /test/Samp.txt - To create file of zero length
+hadoop fs -ls /test
+hadoop fs -touchz /test/Sample.txt
+hadoop fs -truncate 10 /testing/Sample.txt
+hadoop fs -text /testing/core-site.xml
+hadoop fs -setrep 2 /testing/Sample.txt - To replicate file
+hadoop fs -ls /testing
+hadoop fs -setfattr -n user.encoding -v "UTF-8" /test/Sample.txt - Set file attributes
+hadoop fs -getfattr -n user.encoding /test/Sample.txt
+hadoop fs -getfattr -R -n user.encoding /test/Sample.txt
+hadoop fs -getfattr -d /test/Sample.txt
+hadoop fs -rmdir /test/subdir/subdir2/subdir3
+hadoop fs -rmdir --ignore-fail-on-non-empty /test/subdir/subdir2/subdir3
+hadoop fs -df /test
+hadoop fs -df -h /test
