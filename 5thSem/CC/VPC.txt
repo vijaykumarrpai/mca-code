@@ -1,0 +1,15 @@
+Provision a logically isolated section of the Amazon Web Services (AWS) Cloud where you can launch AWS resource in a virtual network that you define.
+Creator has complete control over your virtual networking environment, including selection of your own IP address range, creation of subnets, and configuration of route tables and network gateways.
+
+Amazon Virtual Private Cloud - Amazon VPC
+
+Benefits - 
+1) Define Custom Networks
+2) Assign static private IPv4 address to instances.
+3) Define network interface and attach one or more network interface to the instances.
+4) Define the routing between different subnets.
+5) Define network security by allowing and denying the traffic.
+6) Control the outbound traffic along with inbound traffic.
+
+VPC Key Concepts - A subnet is a range of IP addresses in your VPC. To launch AWS resources into a specified subnet. Use a public subnet for resources that must be connected to the internet, and a private subnet for resources that won't be connected to the internet.
+To protect the AWS resources in each subnet, you can use multiple layers of security, including security groups and network access control lists (ACL).

@@ -1,0 +1,37 @@
+Amazon RDS - Relational Database
+What Powers the application
+				    Application
+		Application Services		Management Services
+		Compute 	Storage		Networking 	Database
+RDS
+1) Setup, operate and scale relational databases
+2) Access to familiar databases such as MySQL, Oracle, MS SQL Server
+3) Support scale out for read-heavy database workloads on MySQL
+4) No upfront investment ; pay-as-you-go pricing
+
+Facilities: Manage patching, backup and recovery
+
+RDS Multi AZ
+Production Version (Parellel Environment)
+1) Disaster Recovery (DR), Continuation of Business (COB)
+2) RDS Read Replica can be also given for primary DB Source
+
+RDS Encryption Resources
+
+RDS - Benefits and Features
+1) Easy to administer
+2) Available and durable
+
+Use cases
+1) WEb and Mobile Applications
+2) Mobile and Online Games
+3) E-Commerce Applications
+
+Operations
+1) Take Snapshots
+2) Create Read Replica (Backup)
+3) Create Aura Read replica
+4) Restore to point in time
+5) Delete the instances (Must)
+6) Migrate Snapshot
+7) Start/Stop/Reboot

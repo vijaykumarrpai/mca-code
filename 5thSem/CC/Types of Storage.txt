@@ -1,0 +1,29 @@
+S3 (Simple Storage Service) - Cloud Storage
+EBS (Elastic Block Store) - similar C drive or E drive (SSD drives attached to instances)
+EFS (Elastic File System) - Shared file systems (Multile systems)
+Glacier - archiving solution (low cost back up) [store infrequently used data or cold data]
+Storage gateway - Safely moving data from on-premises to cloud, hybrid cloud storage
+Snowball - Data import and export system (h/w given to premise for data storage securely)
+Snowmobile - masssive data centre on mobile. You can transfer up to 100PB per Snowmobile.
+
+S3 - - It provides object storage service.
+Amazon S3 provides storage through web service interface
+It is designed for developers where web-scale computing can be easier for them.
+You cannot install anything on S3
+It can store files upto 5TB in size
+durability(99.999999999%)
+99.99% availability, expected loss of 0.0000001% of objects
+S3 is cheap
+S3 is a regional service (any region you can opt)
+Lot of security provision
+
+An object consists of data, key(assigned name) and metadata
+A bucket stored objects
+When data is added to the bucket, Amazon S3 created a unique version ID and allocated it to the object
+
+Storage Classes
+Standard - For frequently accessed data.
+Standard-IA - For infrequently accessed data.
+One Zone-IA - For infrequenctly accessed data.
+
+Bucket policy is an IAM policy where you can allow and deny permission to you Amazon S3
