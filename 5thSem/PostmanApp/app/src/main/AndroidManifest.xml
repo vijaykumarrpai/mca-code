@@ -3,24 +3,30 @@
     package="com.example.postmanapp">
 
     <application
-        android:fullBackupContent="true"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:fullBackupContent="true"
+        android:icon="@drawable/icon2"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity android:name=".SignupActivity">
-        </activity>
-        <activity android:name=".LoginActivity">
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".SignupActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
-            <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER"/>
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

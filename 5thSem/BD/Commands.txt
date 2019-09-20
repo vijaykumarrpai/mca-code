@@ -87,3 +87,5 @@ hadoop fs -rmdir /test/subdir/subdir2/subdir3
 hadoop fs -rmdir --ignore-fail-on-non-empty /test/subdir/subdir2/subdir3
 hadoop fs -df /test
 hadoop fs -df -h /test
+
+hadoop jar /C:/BigData/hadoop-2.9.1/share/hadoop/tools/sources/hadoop-*streaming*.jar -file /D:/Study/MCA/5thSem/BD/Programs/mapper.py -mapper D:/Study/MCA/5thSem/BD/Programs/mapper.py -file /D:/Study/MCA/5thSem/BD/Programs/py_reducer.py -reducer D:/Study/MCA/5thSem/BD/Programs/py_reducer.py -input /testing/Sample.txt -output /testing/wcount-out

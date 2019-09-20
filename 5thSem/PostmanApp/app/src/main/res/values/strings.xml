@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">PostmanApp</string>
+    <string name="title_activity_main">title_activity_main</string>
+    <string name="go_to_signup">Go to Signup</string>
+    <string name="go_to_mainactivity">Go to MainActivity</string>
+    <string name="hint_email">email</string>
+    <string name="hint_password">Password</string>
+    <string name="button_login">Login</string>
+    <string name="text_signup"><u>No account? Go to Signup</u></string>
 </resources>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">VijayApp</string>
+    <string name="Username">Username</string>
+    <string name="Password">Password</string>
+    <string name="Login">Login</string>
+    <string name="Not_registered">Not Registered?</string>
+    <string name="Register">Register</string>
+</resources>

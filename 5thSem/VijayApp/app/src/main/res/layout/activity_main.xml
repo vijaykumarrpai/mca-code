@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/bk1">
+
+    <EditText
+        android:id="@+id/edittext_username"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="200dp"
+        android:paddingLeft="2dp"
+        android:background="#ffffff"
+        android:drawableLeft="@drawable/login"
+        android:hint="@string/Username"/>
+    <EditText
+        android:id="@+id/edittext_password"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="2dp"
+        android:background="#ffffff"
+        android:drawableLeft="@drawable/password"
+        android:hint="@string/Password"/>
+
+    <Button
+        android:id="@+id/button_login"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/Login" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:textColor="#D81B60"
+            android:text="@string/Not_registered"/>
+        <TextView
+            android:id="@+id/textview_register"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:padding="10dp"
+            android:textColor="#D81B60"
+            android:textStyle="bold"
+            android:text="@string/Register"/>
+    </LinearLayout>
+</LinearLayout>
