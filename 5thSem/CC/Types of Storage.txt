@@ -27,3 +27,28 @@ Standard-IA - For infrequently accessed data.
 One Zone-IA - For infrequenctly accessed data.
 
 Bucket policy is an IAM policy where you can allow and deny permission to you Amazon S3
+
+S3 Operations
+1) Storage Class
+2) Life Cycle Management
+3) Static Webpage Hosting
+4) Data Protection
+   Data Encryption
+   Versioning
+5) Bucket Policy (Permission setting)
+6) Replication (Cross-Region)
+7) Accelerated Transfer
+
+sudo yum update
+sudo yum install mysql
+mysql -h endpointname -u admin -p
+
+mysqlworkbench - setup new connection
+Connection name: ClassRDS
+Standard TCP/IP over SSH
+Hostname: Public DNS (IPv4) name
+username: ec2-user
+SSH Key
+Hostname : Endpoint name
+Username: admin
+Password: Store in vault
