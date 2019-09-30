@@ -19,7 +19,7 @@ public void doPost(HttpServletRequest request,HttpServletResponse
     String name=request.getParameter("uid");
     String pass=request.getParameter("pid");
     Class.forName("com.mysql.jdbc.Driver");
-    Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/db_wbsb","root","");
+    Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/student","root","Student@123");
  Statement s=con.createStatement();
 ResultSet rs=s.executeQuery("select * from users where user='"+name+"' ");
  
