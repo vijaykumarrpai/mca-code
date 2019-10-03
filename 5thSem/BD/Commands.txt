@@ -89,3 +89,7 @@ hadoop fs -df /test
 hadoop fs -df -h /test
 
 hadoop jar /C:/BigData/hadoop-2.9.1/share/hadoop/tools/sources/hadoop-*streaming*.jar -file /D:/Study/MCA/5thSem/BD/Programs/mapper.py -mapper D:/Study/MCA/5thSem/BD/Programs/mapper.py -file /D:/Study/MCA/5thSem/BD/Programs/py_reducer.py -reducer D:/Study/MCA/5thSem/BD/Programs/py_reducer.py -input /testing/Sample.txt -output /testing/wcount-out
+
+hadoop jar D:/Study/MCA/5thSem/BD/Programs/WordCount.jar PackageDemo.WordCount /input/Sample.txt /Out/Count
+
+hadoop jar D:/Study/MCA/5thSem/BD/Programs/WordCount.jar PackageDemo.WordCount -D mapreduce.job.queuename=dev /Out/Count

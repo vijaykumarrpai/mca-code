@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<element>
 <web-app>
  <display-name>AJP</display-name>
  <welcome-file-list>
@@ -21,3 +22,4 @@
  <welcome-file>index.html</welcome-file>
  </welcome-file-list>
 </web-app>
+</element>
