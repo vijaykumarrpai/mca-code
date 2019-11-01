@@ -1,0 +1,33 @@
+How to make container and pair containerized applications
+
+How PaaS works
+
+Evolving from different standards
+Software as a Service
+Platform as a Service
+Infrastructure as a Service
+
+In High Level - It provides
+1) Operating System
+2) Software to build upon
+3) Dependencies to Run Software
+4) Environment Variable
+5) Client Pull the container
+
+Guest OS - OS running on local machine.
+
+Advantages of Docker - 
+1) No Guest OS.
+2) No Hypervisor.
+3) Docker Engine (holds tiny os).
+
+Benefits
+1) Docker is a tool designed to make it easier to create, deploy, and run applications by using containers.
+2) Docker containers are lightweight alternatives to Virtual Machines, and it uses the host OS.
+3) You don't have to pre-allocate any RAM in containers.
+
+AWS ECS (Elastic Container Service) - Is a highly scalable, fast, container management services that makes it easy to run, stop and manage Docker containers on a cluster, which lets you host your cluster on a serverless infrastructure.
+
+Two ways to make ECS:
+1) ECS Container Service
+2) ECS Fargate Service

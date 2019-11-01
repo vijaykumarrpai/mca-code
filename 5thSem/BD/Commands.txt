@@ -93,3 +93,383 @@ hadoop jar /C:/BigData/hadoop-2.9.1/share/hadoop/tools/sources/hadoop-*streaming
 hadoop jar D:/Study/MCA/5thSem/BD/Programs/WordCount.jar PackageDemo.WordCount /input/Sample.txt /Out/Count
 
 hadoop jar D:/Study/MCA/5thSem/BD/Programs/WordCount.jar PackageDemo.WordCount -D mapreduce.job.queuename=dev /Out/Count
+
+PIG
+
+pig -x local - Specify the local mode
+pig -x tez_local - Specify Tez local mode
+pig -x spark_local - Specify Spark local mode
+pig -x mapreduce - Mapreduce mode
+-x tez - Tez mode
+-x spark - Spark mode
+
+PIG works in REPL Environment - Read, Evaulate, Print and Loop Environment
+
+clear - To clear the screen
+load - test = load 'test.txt' using PigStorage(); - To load the file
+dump test; test is a relation. Dump is used to see the output
+pig -x local -4 conf/log4j.properties - To start pig without showing error
+
+groceries = load 'groceries.csv' using PigStorage(',');
+describe groceries;
+
+grunt> groceries = load 'groceries.csv' using PigStorage(',')
+>> as
+>> (
+>> order_id:chararray,
+>> location: chararray,
+>> product: chararray,
+>> day: datetime,
+>> revenue: double
+>> );
+foreach groceries generate $2, $4;
+groc_sub = limit groceries 5;
+
+C:\Pig\pig-0.17.0\sub_dir>type * - To display contents of folder
+
+Numeric datatypes
+Integers - Int: 4 bytes
+Long - 8 bytes
+
+Decimals
+Float - 4 bytes
+Double - 8 bytes
+
+Tuple and Bag can have any type of data.
+A row in RDBMS is a tuple
+
+stud_info = foreach stud generate $1, $3.$0; - First element of 4th column
+
+stud_no_schema_INFO = foreach stud_no_schema generate $1, $3.$0; - Error
+stud_no_schem_info = foreach stud_no_schema generate $1, $3; - Doesn't show result as expected
+
+groceries = load 'groceries.csv' using PigStorage(',')
+>> as
+>> (
+>> ord_id: chararray,
+>> loc: chararray,
+>> prod: chararray,
+>> day: datetime,
+>> amt: double
+>> );
+
+groceries_order = foreach groceries generate $0, $1, TOTUPLE($2, $4);
+stud_info = foreach stud generate TOTUPLE($0, $1, $2), $3;
+stud_info2 = foreach stud generate TOTUPLE($0), $3.$0;
+
+BAG
+
+stud_subj = load 'stud_subj.txt'
+>> as
+>> (
+>> stud_id: chararray,
+>> name: chararray,
+>> grade: int,
+>> sub1: chararray,
+>> sub2: chararray,
+>> sub3: chararray
+>> );
+
+stud_subj_bag = foreach stud_subj generate $0, $1, $2, TOBAG($3, $4, $5);
+
+MAP
+
+Key value have to be character array.
+
+stud_marks = load 'stud_marks.txt'
+>> as
+>> (
+>> stud_id: chararray,
+>> name: chararray,
+>> grade: int,
+>> marks: map [int]
+>> );
+
+stud_math = foreach stud_marks generate $1, $3#'Maths';
+
+stud_info_map = foreach stud_marks generate $0, TOMAP($1, $2);
+stud_info_map = foreach stud_marks generate $0, TOMAP($1, $2), $3;
+
+Pig is Omnivorous
+-It consumes any kind of data
+
+from/to		bag	tuple	map	int	long	float	double	chararray	bytearray	boolean
+bag		error	error	error	error	error	error	error			error		error
+tuple		error		error	error	error	error	error	error		error		error
+map		error	error		error	error	error	error	error		error		error
+int		error	error	error		yes	yes	yes	yes		error		error
+long		error	error	error	yes		yes	yes	yes		error		error
+float		error	error	error	yes	yes		yes	yes		error		error
+double		error	error	error	yes	yes	yes		yes		error		error
+chararray	error	error	error	yes	yes	yes	yes			error		yes
+bytearray	yes	yes	yes	yes	yes	yes	yes	yes				yes
+boolean		error	error	error	error	error	error	error	yes				error				
+
+groc_no_datatype = load 'groceries.csv' using PigStorage(',')
+>> as
+>> (
+>> ord_id,
+>> loc,
+>> prod,
+>> day,
+>> revenue
+>> );
+
+groc_partial = load 'groceries.csv' using PigStorage(',')
+>> as
+>> (
+>> order_id: chararray,
+>> location: chararray
+>> );
+
+store_prod = foreach groc_no_datatype generate loc, prod, revenue; - Column can be accessed using column name.
+
+groc_no_schema = load 'groceries.csv' using PigStorage(',');
+
+Q) Generate a schema with only location, product name and quantity
+Ans) products = foreach groc_no_schema generate $1,$2,$4;
+
+Store_products = foreach groc_no_schema generate $1,$2,$4 * 1.0; - double
+Store_products = foreach groc_no_schema generate $1,$2,$4 * 1; - int
+
+store_prod = foreach groc_no_datatype generate loc, prod, revenue * 1.0;
+
+student = load 'student.txt'
+>> as
+>> (
+>> stud_id: chararray,
+>> name: chararray,
+>> grade: int,
+>> contact: tuple(city: chararray, phone: chararray)
+>> );
+
+stud_info = foreach student generate name, contact.city, contact.phone;
+stud_chem = foreach stud_marks generate name, marks#'Chemistry';
+
+Pig using Load Command
+
+ orders = load 'orders.json' using JsonLoader('
+>> order_id: chararray,
+>> username: chararray,
+>> product: chararray,
+>> quantity: int,
+>> amount: double,
+>> order_date: chararray
+>> ');
+
+order_total = foreach orders generate username, product, quantity * amount as total;
+
+order_total = foreach orders generate username, product, ROUND(quantity * amount) as total;
+
+order_num = foreach orders generate SUBSTRING(order_id, 1, 3) as order_num;
+
+updated_order_ids = foreach orders generate REPLACE(order_id, 'o', 'order'), product;
+
+order_with_date = foreach orders generate username, product, quantity, ToDate(order_date, 'MM-dd-yyyy') as date;
+
+order_by_month = foreach order_with_date generate username, product, quantity, GetMonth(date) as mom;
+
+FILTER
+
+Operators	Work with
+==		Scalar, Maps, Tuples
+!=		Scalar, Maps, Tuples
+>		Scalar
+<		Scalar
+>=		Scalar	
+<=		Scalar
+
+ord_qty_fil = filter orders by quantity > 1;
+
+ord_id_fil = filter orders by order_id >= 'o4';
+
+Q) Filter the orders where quantity is > 1 and order_id > o4
+
+ord_fil = filter orders by quantity > 1 and order_id>= 'o4';
+
+Q) List of all records where products end with s
+ord_prod = filter orders by product matches '.*s'; - S at the end
+
+ord_prod = filter orders by product matches '.*S.*'; - S in between
+
+Q) All records with speakers as product name
+ord_name = filter orders by product matches '.*Speakers.*'; or .*Speakers*.
+
+ord_dup = load 'orders_dup.json' using JsonLoader('
+>> ord_id: chararray,
+>> uname: chararray,
+>> prod: chararray,
+>> qty: int,
+>> amt: double,
+>> order_date: chararray
+>> ');
+
+ord_no_dup = distinct ord_dup;
+
+orders_3 = limit ord_dup 3;
+
+orders_desc = order ord_dup by ord_id desc;
+quantity_asc = order ord_dup by qty asc;
+
+split ord_dup into ord_qty_1 if (qty==1),
+>> ord_qty_more if (qty > 1);
+dump ord_aty_1;
+
+split ord_dup into ord_p_name if (uname is not null),
+ord_m_name if (uname is null and ord_id is not null);
+
+col = load 'NYPD_Motor_Vehicle.csv' using PigStorage(',');
+collision_limit = limit col_header 1000;
+col_header = limit col 1;
+
+col_useful = foreach collision_limit generate $0 as date, $2 as borough, $3 as zipcode, TRIM($6) as location, $11+$13+$15+$17 as injured, TRIM($19) as reason;
+
+describe col_useful;
+
+col_reason_injured = foreach col_useful generate reason, borough, injured;
+
+col_reasons = group col_reason_injured by reason;
+
+describe col_reasons;
+
+col_reasons_borough = group col_reason_injured by borough;
+describe col_reasons_borough;
+
+tot_injured_reason = foreach col_reasons generate group, SUM(col_reason_injured.injured);
+
+describe tot_injured_reason;
+
+num_col_borough = foreach col_reasons_borough generate group, COUNT(col_reason_injured);
+
+names = load 'names.csv' using PigStorage(',')
+as
+(
+symbol: chararray,
+name: chararray,
+revenue: chararray
+);
+
+
+trades = load 'trades.csv' using PigStorage(',')
+as
+(
+symbol: chararray,
+open: double,
+high: double,
+low: double,
+close: double,
+date: datetime
+);
+
+name_trade = join names by symbol, trades by symbol;
+
+describe name_trade;
+
+name_trade_use = foreach name_trade generate names::symbol, revenue, close, date;
+
+name_trade_left = join names by symbol left outer, trades by symbol;
+
+name_trade_right = join names by symbol right outer, trades by symbol;
+
+ names1 = load 'names.csv' using PigStorage(',')
+>> as
+>> (
+>> symbol: chararray,
+>> name: chararray,
+>> revenue: chararray
+>> );
+
+name_self = join names by symbol, names1 by symbol;
+dump name_self;
+describe name_self;
+
+names_trades_cross = cross names, trades;
+describe names_trades_cross;
+
+names_trades_cjoin = filter names_trades_cross by names::symbol == trades::symbol;
+
+UNION
+other_names = load 'other_names.csv' using PigStorage(',')
+>> as
+>> (
+>> symbol: chararray,
+>> name: chararray,
+>> revenue: chararray
+>> );
+
+all_names = union names, other_names;
+
+Union when schema is mismatched
+R1: (a1: long, a2: long)
+R2: (b1: long, b2: long, b3: long) R1 union R2: null
+Compatible Types will be cast to Higher Type
+double > float > long > int > bytearray
+tuple | bag | map | chararray > bytearray
+
+Different inner types
+R1: (a1: (x: long, y: int), a2: {(n: float, m: chararray)})
+R2: (b1: (g: chararray, h: float), b3: {(n: int, m: long)})
+
+Onschema - irrespective of datatype we can able to get the datatype
+
+u_n_t = union names, trades;
+
+union_n_t = union onschema names, trades;
+
+un_n_t = union onschema trades,names;
+
+FLATTEN
+Flatten_function - Works only on Bag.
+
+stud_act = load 'student_activities.txt'
+>> as
+>> (stud_id: chararray,
+>> name: chararray,
+>> act1: chararray,
+>> act2: chararray,
+>> act3: chararray,
+>> act4: chararray
+>> );
+
+stud_act_bag = foreach stud_act generate stud_id, name, TOBAG(act1, act2, act3, act4) as activities;
+
+flat_act = foreach stud_act_bag generate name, flatten(activities) as act;
+
+col = load 'NYPD_Motor_Vehicle.csv' using PigStorage(',');
+
+col_useful = foreach col generate $0 as date, $2 as borough, $3 as zipcode, TRIM($6) as location, $11+$13+$15+$17 as injured, TRIM($19) as reason;
+
+col_inj = foreach col_useful generate reason, borough, location, injured;
+
+Q) For every borough and reason, count the injured
+col_group = group col_inj by (borough, reason);
+
+col_total_raw = foreach col_group generate group.borough, group.reason, COUNT(col_inj) as total;
+
+col_total = filter col_total_raw by borough is not null and reason is not null;
+
+col_stats = foreach col_total_group {
+tot_col = SUM(col_total.total);
+generate tot_col;
+}
+
+col_stats = foreach col_total_group {
+tot_col = SUM(col_total.total);
+generate group, tot_col;
+}
+
+col_stats = foreach col_total_group {
+tot_col = SUM(col_total.total);
+sort_col = order col_total by total desc;
+generate flatten(sort_col), tot_col;
+}
+
+HIVE
+
+Data Warehouse - A technology that aggregates data from one or more sources so that it can be compared and analyzed for greater business intelligence.
+Data may be lagged, not real-time.
+Ex of warehouses - vertica, Teradata, Oracle, IBM
+
+				   HIVE
+		HDFS		MAPREDUCE		YARN
+

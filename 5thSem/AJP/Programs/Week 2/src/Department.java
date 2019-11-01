@@ -8,7 +8,7 @@ public class Department {
 	public static void main(String[] args) {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
-			Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/student","root","student");
+			Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/student","root","Student@123");
 			Statement stmt = cn.createStatement();
 			
 			String query = "create table student.DEPARTMENT2(DeptId varchar(20) primary key, Name varchar(50), DeptStrength int)";

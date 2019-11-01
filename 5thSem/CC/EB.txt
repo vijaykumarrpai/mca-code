@@ -1,0 +1,17 @@
+Platform as a service (PaaS) is a Cloud computing model in which a third-party provider delivers hardware and software tools, usually those needed for application development to users over the internet.
+fundamentally provides elastic scaling of your application
+
+Features
+Operating System
+Server side scripting environment
+
+AWS Elastic Beanstalk is a PAAS service used for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js etc on familiar servers such as Apache , Nginx, Tomcat and IIS.
+
+1) Elastic Beanstalk is the fastest and simplest wat to deploy your application on AWS.
+2) Enables you to focus on writing code rather than spending time managing and configuring servers etc.
+3) Automatically scaled your application up and down based on application's specific needs.
+
+define('DB_SERVER', 'aaics5759j1zts.czbgwxqlrb32.ap-south-1.rds.amazonaws.com');
+mysql -h endpoint -u root -p
+use demo;
+select * from users;
