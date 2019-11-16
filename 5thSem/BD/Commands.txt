@@ -473,3 +473,48 @@ Ex of warehouses - vertica, Teradata, Oracle, IBM
 				   HIVE
 		HDFS		MAPREDUCE		YARN
 
+startNetworkServer -h 0.0.0.0
+jps -m
+hive
+
+show databases;
+create database databasename;
+use databasename;
+
+hive> create table customers (
+. . > id bigint,
+. . > name string,
+. . > address string
+. . > );
+
+show tables;
+describe tablename - To know the datatypes used in the table
+insert into table customers values (1, "AAA", "Kar"),
+(2, "BBB", "Del"),
+(3, "CCC", "Mum"),
+(4, "DDD", "DXB");
+
+select * from customers;
+select name from customers;
+select name from customers where address = "ZZZ";
+select * from customers where address = "ZZZ";
+select name from customers where address = "ZZZ" and id > 100;
+
+select DISTINCT address from customers;
+select name, address from customers order by address;
+
+select count(*) from customers;
+select count(*) from customers group by address;
+select address, count(*) from customers group by address;
+
+select address, count(*) as customer_count from customers group by address;
+
+select * from customers limit 2;
+
+create table orders (id Bigint , prod_id int, Customer_id int, qty int, Amount double);
+
+select customers.id, name, product_id from customers join orders where customers.id = orders.cust_id;
+
+Hive only supports equi-joins where the 'where' clause on the joined column is an equality clause.
+
+Hive only allows structured data.
