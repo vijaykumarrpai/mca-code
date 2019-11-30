@@ -518,3 +518,115 @@ select customers.id, name, product_id from customers join orders where customers
 Hive only supports equi-joins where the 'where' clause on the joined column is an equality clause.
 
 Hive only allows structured data.
+
+hadoop dfsadmin -safemode leave
+
+Temporary tables
+
+use mca;
+
+create temporary table test_customers like customers;
+describe test_customers;
+
+insert into test_customers values (189, "ACAC", "VVV");
+
+select * from test_customers;
+
+show tables;
+
+quit; -> restart hive again
+
+create temporary table customers like orders;
+
+INSERTING DATA
+
+show tables;
+describe freshprods;
+
+alter table freshprods change column
+title title string after id;
+
+load data local inpath 'freshproducts.csv'
+select * from freshprods;
+
+hadoop cmd prompt -> hadoop fs -ls /user/hive/warehouse/mca.db/
+hadoop fs -cat /user/hive/warehouse/mca.db/freshprods/*
+
+hive\bin -> hadoop fs -copyFromLocal freshproducts.csv /data/
+
+hive -> load data inpath '/data/freshproducts.csv' into table freshprods;
+select * from freshprods;
+
+hadoop cmd -> hadoop fs -ls /user/hive/warehouse/mca.db/
+hadoop fs -ls /user/hive/warehouse/mca.db/freshprods
+hadoop fs -ls /data/
+
+hive -> show tables;
+describe products;
+describe freshprods;
+
+insert into table products
+select id, title, cost from freshprods;
+
+select * from products;
+
+describe products; -> see that the id is before the product name
+
+create table prod_name (id string, name string);
+create table prod_cost (id string, cost float);
+
+from products
+insert into prod_name
+select id, title
+insert into prod_cost
+select id, cost;
+
+from products
+insert overwrite prod_name
+
+truncate table freshprods;
+select * from freshprods;
+
+PARTITIONING AND BUCKETING OF DATA
+hive -> create table if not exists mobilephones (
+id string,
+title string,
+cost float, 
+colors arrays<string>,
+screen_size arrays<float>
+);
+
+insert into table mobilephones
+select "iPhone 6 Plus", "OnePlus 7 Pro", 300,
+array("white", "silver", "black"), array(float(4.5))
+UNION ALL
+select "Xiaomi Redmi Note 7 Pro", "Realme 3 Pro", 200, array("black", "gold"),
+array(float(4.5), float(5.5));
+
+select id, colors[0] from mobilephones;
+
+drop table mobilephones;
+
+create table mobilephones (
+id string,
+title string,
+cost float,
+colors array<string>,
+screen_size array<float>
+)
+row format delimited fields terminated by ','
+collection items terminated by '#';
+
+load data local inpath 'mobilephones.csv'
+into table mobilephones;
+Loading data to table mca.mobilephones
+
+select * from mobilephones;
+
+select explode(colors) as variants from mobilephones;
+select colors from mobilephones;
+
+select explode(features) as (feature, present)
+from mobilephones;
+
+select posexplode(colors) as (index, variants) from mobilephones;

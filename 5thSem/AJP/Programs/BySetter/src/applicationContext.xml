@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- Dependent Bean class cfg -->
+    <bean id="dt" class="java.util.Date" />
+
+    <!-- Target Bean class cfg -->
+    <bean id="wmg" class="com.bysetter.WishMessageGenerator">
+        <property name="date" ref="dt"></property><!-- Setter injection -->
+    </bean>
+</beans>
