@@ -35,7 +35,7 @@
     "electron": "^4.0.2",
     "fs-extra": "^1.0.0",
     "indexeddb-export-import": "^1.0.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "sniffr": "^1.1.4",
     "underscore": "^1.8.3",
     "username": "^2.3.0",
