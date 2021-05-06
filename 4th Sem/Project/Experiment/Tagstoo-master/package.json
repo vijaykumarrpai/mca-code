@@ -37,7 +37,7 @@
     "indexeddb-export-import": "^1.0.0",
     "lodash": "^4.17.11",
     "sniffr": "^1.1.4",
-    "underscore": "^1.8.3",
+    "underscore": "^1.12.1",
     "username": "^2.3.0",
     "windows-drive-letters": "^3.1.0"
   },
