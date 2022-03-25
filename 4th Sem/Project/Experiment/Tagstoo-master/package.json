@@ -32,7 +32,7 @@
   "dependencies": {
     "adm-zip": "^0.4.13",
     "drivelist": "^5.0.4",
-    "electron": "^4.0.2",
+    "electron": "^13.6.6",
     "fs-extra": "^1.0.0",
     "indexeddb-export-import": "^1.0.0",
     "lodash": "^4.17.11",
