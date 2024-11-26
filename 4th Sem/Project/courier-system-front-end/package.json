@@ -19,7 +19,7 @@
     "express": "^4.16.4",
     "express-session": "^1.15.6",
     "material-ui": "^0.20.2",
-    "mongoose": "^5.4.19",
+    "mongoose": "^5.7.5",
     "npm": "^6.9.0",
     "react-login-signup-form": "^1.0.7",
     "react-tap-event-plugin": "^3.0.3"
